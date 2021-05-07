@@ -1,124 +1,55 @@
-import React from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import IconButton from "@material-ui/core/IconButton";
-import InputBase from "@material-ui/core/InputBase";
-import { fade, makeStyles } from "@material-ui/core/styles";
-import HomeIcon from "@material-ui/icons/Home";
-import MovieIcon from "@material-ui/icons/Movie";
-import LiveTvIcon from "@material-ui/icons/LiveTv";
-import SearchIcon from "@material-ui/icons/Search";
+import { Flex } from "./Commons";
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-    display: "none",
-    [theme.breakpoints.up("sm")]: {
-      display: "block",
-    },
-  },
-  search: {
-    position: "relative",
-    borderRadius: theme.shape.borderRadius,
-    backgroundColor: fade(theme.palette.common.white, 0.15),
-    "&:hover": {
-      backgroundColor: fade(theme.palette.common.white, 0.25),
-    },
-    marginLeft: 0,
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      marginLeft: theme.spacing(1),
-      width: "auto",
-    },
-  },
-  searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: "100%",
-    position: "absolute",
-    pointerEvents: "none",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  inputRoot: {
-    color: "inherit",
-  },
-  inputInput: {
-    padding: theme.spacing(1, 1, 1, 0),
-    // vertical padding + font size from searchIcon
-    paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
-    transition: theme.transitions.create("width"),
-    width: "100%",
-    [theme.breakpoints.up("sm")]: {
-      width: "12ch",
-      "&:focus": {
-        width: "20ch",
-      },
-    },
-  },
-}));
+import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
+import TheatersRoundedIcon from "@material-ui/icons/TheatersRounded";
+import LiveTvRoundedIcon from "@material-ui/icons/LiveTvRounded";
+import Form from "./Form";
+
+const Nav = styled(Flex)`
+  width: ${(props) => props.theme.width.full};
+  height: 90px;
+  padding: ${(props) => props.theme.spacing.md};
+  background-color: ${(props) => props.theme.colors.primary};
+`;
+
+const List = styled.ul`
+  display: flex;
+`;
+
+const ListItem = styled.li`
+  padding: 0 ${(props) => props.theme.spacing.sm};
+`;
+
+const StyledLink = styled(Link)`
+  color: ${(props) => props.theme.colors.text};
+`;
 
 const NavBar = () => {
-  const classes = useStyles();
-
   return (
-    <div className={classes.root}>
-      <AppBar position="static">
-        <Toolbar>
-          <Link to="/home">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <HomeIcon />
-            </IconButton>
-          </Link>
-          <Link to="/movie">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <MovieIcon />
-            </IconButton>
-          </Link>
-          <Link to="/tv">
-            <IconButton
-              edge="start"
-              className={classes.menuButton}
-              color="inherit"
-              aria-label="open drawer"
-            >
-              <LiveTvIcon />
-            </IconButton>
-          </Link>
-
-          <div className={classes.search}>
-            <div className={classes.searchIcon}>
-              <SearchIcon />
-            </div>
-            <InputBase
-              placeholder="Buscar..."
-              classes={{
-                root: classes.inputRoot,
-                input: classes.inputInput,
-              }}
-              inputProps={{ "aria-label": "buscar" }}
-            />
-          </div>
-        </Toolbar>
-      </AppBar>
-    </div>
+    <>
+      <Nav as="nav">
+        <List>
+          <ListItem>
+            <StyledLink to="/home">
+              <HomeRoundedIcon aria-label="inicio" fontSize="large" />
+            </StyledLink>
+          </ListItem>
+          <ListItem>
+            <StyledLink to="/movie">
+              <TheatersRoundedIcon aria-label="películas" fontSize="large" />
+            </StyledLink>
+          </ListItem>
+          <ListItem>
+            <StyledLink to="/tv">
+              <LiveTvRoundedIcon aria-label="series" fontSize="large" />
+            </StyledLink>
+          </ListItem>
+        </List>
+        <Form />
+      </Nav>
+    </>
   );
 };
 export default NavBar;
