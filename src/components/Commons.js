@@ -18,6 +18,12 @@ export const StyledImg = styled.img`
   width: ${(props) => props.theme.width.full};
   height: ${(props) => props.height || "auto"};
 `;
+
+export const AlignedButton = styled.button`
+  top: ${(props) => props.top};
+  left: ${(props) => props.left};
+  transform: ${(props) => props.transform || "unset"};
+`;
 // lists
 // list items
 //titles
