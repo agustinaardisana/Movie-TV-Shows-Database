@@ -1,6 +1,5 @@
 import styled from "styled-components";
-import { FlexCenter } from "./Commons";
-import CardSection from "./CardSection";
+import CardSection from "../components/CardSection";
 
 const HomeContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};

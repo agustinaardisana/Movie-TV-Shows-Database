@@ -32,7 +32,7 @@ const NavBar = () => {
       <Nav as="nav">
         <List>
           <ListItem>
-            <StyledLink to="/home">
+            <StyledLink to="/">
               <HomeRoundedIcon aria-label="inicio" fontSize="large" />
             </StyledLink>
           </ListItem>

@@ -22,8 +22,19 @@ export const theme = {
     full: "100%",
   },
 
-  //breakpoints
-  //sizes
+  // sizes: {
+  //   h1: "30px",
+  //   h2: "25px",
+  //   h3: "20px",
+  //   p: "10px"
+
+  // },
+
+  // breakpoints: {
+  //   small: "600px",
+  //   medium: "1000px",
+  //   large: "1500px"
+  // }
   // Borders
   // Shadows
 };

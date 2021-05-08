@@ -14,6 +14,10 @@ export const Flex = styled.div`
   flex-wrap: ${(props) => props.flexWrap};
 `;
 
+export const StyledImg = styled.img`
+  width: ${(props) => props.theme.width.full};
+  height: ${(props) => props.height || "auto"};
+`;
 // lists
 // list items
 //titles

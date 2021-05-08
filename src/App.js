@@ -4,10 +4,10 @@ import { theme } from "./styles/theme";
 import "./App.scss";
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-import Home from "./components/Home";
-import Movie from "./components/Movie";
-import TV from "./components/TV";
-import Page404 from "./components/Page404";
+import Home from "./views/Home";
+import Movie from "./views/Movie";
+import TV from "./views/TV";
+import Page404 from "./views/Page404";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -39,7 +39,7 @@ const App = () => {
           <GlobalStyle />
           <NavBar />
           <Switch>
-            <Route exact path="/home" component={Home} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
             <Route exact path="/tv" component={TV} />
             <Route component={Page404} />
