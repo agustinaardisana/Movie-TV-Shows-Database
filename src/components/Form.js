@@ -9,7 +9,7 @@ const StyledForm = styled.form`
 
 const StyledLabel = styled.label`
   color: ${(props) => props.theme.colors.text};
-  position: relative;
+  position: ${(props) => props.theme.position.parent};
 `;
 
 const StyledInput = styled.input`
@@ -24,7 +24,7 @@ const StyledInput = styled.input`
 
 const SearchButton = styled(AlignedButton)`
   color: ${(props) => props.theme.colors.text};
-  position: absolute;
+  position: ${(props) => props.theme.position.child};
   z-index: 1;
   transition: ease transform 1s;
   transition-delay: 10ms;

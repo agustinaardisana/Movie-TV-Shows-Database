@@ -22,6 +22,15 @@ export const theme = {
     full: "100%",
   },
 
+  radius: {
+    regular: "8px",
+  },
+
+  position: {
+    parent: "relative",
+    child: "absolute",
+  },
+
   // sizes: {
   //   h1: "30px",
   //   h2: "25px",
