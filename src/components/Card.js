@@ -3,12 +3,15 @@ import { FlexCenter } from "./Commons";
 
 const TitleContainer = styled(FlexCenter)`
   color: ${(props) => props.theme.colors.text};
+  text-align: center;
   background: linear-gradient(
     transparent,
     ${(props) => props.theme.colors.primary}
   );
+  padding: ${(props) => props.theme.spacing.xs};
   width: ${(props) => props.theme.width.full};
-  height: 60px;
+  height: auto;
+  min-height: 60px;
   border-bottom-right-radius: ${(props) => props.theme.radius.regular};
   border-bottom-left-radius: ${(props) => props.theme.radius.regular};
   position: ${(props) => props.theme.position.child};
@@ -20,7 +23,7 @@ const TitleContainer = styled(FlexCenter)`
 `;
 
 const StyledCard = styled.article`
-  width: 250px;
+  width: 18%;
   margin: ${(props) => props.theme.spacing.sm};
   position: ${(props) => props.theme.position.parent};
   overflow: hidden;
@@ -49,12 +52,13 @@ const Img = styled.img`
 
 const CardTitle = styled.h2``;
 
-const Card = () => {
+const Card = ({ movie }) => {
+  console.log(movie);
   return (
     <StyledCard>
-      <Img src="https://image.tmdb.org/t/p/w500/1Lt6cbfnPIj4mAYYwErQtevhv42.jpg" />
+      <Img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
       <TitleContainer>
-        <CardTitle>Nombre Pelicula</CardTitle>
+        <CardTitle>{movie.title || movie.name}</CardTitle>
       </TitleContainer>
     </StyledCard>
   );

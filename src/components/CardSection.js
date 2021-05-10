@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { Flex } from "./Commons";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
-import Card from "./Card";
+import CardContainer from "./CardContainer";
 
 const SectionContainer = styled(Flex)`
   width: ${(props) => props.theme.width.full};
@@ -20,11 +20,7 @@ const StyledLink = styled(Link)`
   line-height: 20px;
 `;
 
-const CardContainer = styled(Flex)`
-  width: ${(props) => props.theme.width.full};
-`;
-
-const CardSection = ({ title }) => {
+const CardSection = ({ title, dataMovies }) => {
   return (
     <SectionContainer
       as="section"
@@ -37,13 +33,7 @@ const CardSection = ({ title }) => {
           <ArrowForwardIosIcon />
         </StyledLink>
       </TitleContainer>
-      <CardContainer justifyContent="center" flexWrap="wrap">
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-        <Card />
-      </CardContainer>
+      <CardContainer dataMovies={dataMovies} />
     </SectionContainer>
   );
 };

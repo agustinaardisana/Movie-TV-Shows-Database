@@ -12,6 +12,7 @@ export const theme = {
   },
 
   spacing: {
+    xs: "5px",
     sm: "10px",
     md: "30px",
     lg: "50px",
