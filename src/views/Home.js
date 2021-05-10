@@ -12,14 +12,15 @@ const Home = () => {
   const baseURL = "https://api.themoviedb.org";
   const trendingMovies = "/3//trending/movies/week?";
   const trendingTV = "/3//trending/tv/week?";
+  const language = "&language=es-ES";
+
   // mediaType = "";
-  // const language = "&language=es-ES";
 
   const [dataMovies, SetDataMovies] = useState([]);
   const [dataTV, SetDataTV] = useState([]);
 
   useEffect(() => {
-    fetch(baseURL + trendingMovies + apiKey)
+    fetch(baseURL + trendingMovies + apiKey + language)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.results);
@@ -29,7 +30,7 @@ const Home = () => {
   console.log(dataMovies);
 
   useEffect(() => {
-    fetch(baseURL + trendingTV + apiKey)
+    fetch(baseURL + trendingTV + apiKey + language)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.results);
