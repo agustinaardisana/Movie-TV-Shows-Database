@@ -20,7 +20,7 @@ const StyledLink = styled(Link)`
   line-height: 20px;
 `;
 
-const CardSection = ({ title, dataMovies }) => {
+const CardSection = ({ title, dataMovies, dataTV }) => {
   return (
     <SectionContainer
       as="section"
@@ -33,7 +33,7 @@ const CardSection = ({ title, dataMovies }) => {
           <ArrowForwardIosIcon />
         </StyledLink>
       </TitleContainer>
-      <CardContainer dataMovies={dataMovies} />
+      <CardContainer dataMovies={dataMovies} dataTV={dataTV} />
     </SectionContainer>
   );
 };

@@ -52,13 +52,18 @@ const Img = styled.img`
 
 const CardTitle = styled.h2``;
 
-const Card = ({ movie }) => {
-  console.log(movie);
+const Card = ({ item }) => {
   return (
     <StyledCard>
-      <Img src={`https://image.tmdb.org/t/p/original/${movie.poster_path}`} />
+      <Img
+        src={
+          `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
+          "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
+        }
+        alt={item.title || item.name}
+      />
       <TitleContainer>
-        <CardTitle>{movie.title || movie.name}</CardTitle>
+        <CardTitle>{item.title || item.name}</CardTitle>
       </TitleContainer>
     </StyledCard>
   );

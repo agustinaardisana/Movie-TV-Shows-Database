@@ -9,13 +9,17 @@ const HomeContainer = styled.main`
 
 const Home = () => {
   const apiKey = "api_key=c5b12fd694a4290a27c963631e81509e";
-  const baseURL = "https://api.themoviedb.org/3//trending/movies/week?";
-  const language = "&language=es-ES";
+  const baseURL = "https://api.themoviedb.org";
+  const trendingMovies = "/3//trending/movies/week?";
+  const trendingTV = "/3//trending/tv/week?";
+  // mediaType = "";
+  // const language = "&language=es-ES";
 
   const [dataMovies, SetDataMovies] = useState([]);
+  const [dataTV, SetDataTV] = useState([]);
 
   useEffect(() => {
-    fetch(baseURL + apiKey)
+    fetch(baseURL + trendingMovies + apiKey)
       .then((res) => res.json())
       .then((data) => {
         console.log(data.results);
@@ -24,16 +28,26 @@ const Home = () => {
   }, []);
   console.log(dataMovies);
 
+  useEffect(() => {
+    fetch(baseURL + trendingTV + apiKey)
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data.results);
+        SetDataTV(data.results);
+      });
+  }, []);
+  console.log(dataTV);
+
   return (
     <>
       <HomeContainer>
-        {dataMovies && (
-          <CardSection
-            title="Peliculas que son tendencia"
-            dataMovies={dataMovies}
-          />
-        )}
-        <CardSection title="Series que son tendencia" />
+        {/* {dataMovies && ( */}
+        <CardSection
+          title="Peliculas que son tendencia"
+          dataMovies={dataMovies}
+        />
+        {/* )} */}
+        <CardSection title="Series que son tendencia" dataTV={dataTV} />
       </HomeContainer>
       ;
     </>

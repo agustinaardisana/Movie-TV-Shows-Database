@@ -6,16 +6,23 @@ const StyledCardContainer = styled(Flex)`
   width: ${(props) => props.theme.width.full};
 `;
 
-const CardContainer = ({ dataMovies }) => {
-  console.log(dataMovies);
+const CardContainer = ({ dataMovies, dataTV }) => {
+  console.log(dataTV);
 
   return (
     <>
       <StyledCardContainer justifyContent="center" flexWrap="wrap">
         {dataMovies &&
-          dataMovies.map((movie, index) => {
+          dataMovies.map((item, index) => {
             if (index < 5) {
-              return <Card movie={movie} />;
+              return <Card item={item} key={item.id} />;
+            }
+          })}
+        {dataTV &&
+          dataTV.map((item, index) => {
+            if (index < 5) {
+              // return console.log(show);
+              return <Card item={item} key={item.id} />;
             }
           })}
       </StyledCardContainer>
