@@ -1,70 +1,71 @@
-# Getting Started with Create React App
+# [🇺🇸EN] 🎬 Film and Television Database 🎬 (🚧 under construction 🚧)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is the final project of the **Frontend web development** training at **ADA ITW**, and the first one bootstrapped with React.
 
-## Available Scripts
+<!-- ### 🖱️[click to see](https://agustinaardisana.github.io/TP5-Comics_Search_Engine/) -->
 
-In the project directory, you can run:
+## Technologies and design
 
-### `npm start`
+The technologies used for this project are:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+-React
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+-Styled Components
 
-### `npm test`
+-Material UI
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+-[API](https://developers.themoviedb.org/4/getting-started/authorization)
 
-### `npm run build`
+-Responsive Design
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+-Accesibility
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The pre-established design that had to be followed as part of the requirements to meet can be seen [🔗here🔗](https://ada-5ta-final-extra.netlify.app/)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Project Status and functionalities
 
-### `npm run eject`
+The present status of the project focuses mostly on the implementation of **React** and **Styled Components**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Considerations
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I'm a trainee Developer and this is my first project working with React. I have a long way to go in order to improve the quality of my code and any feedback will make me feel accompanied on this journey, as long as it comes from a place of respect.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Author
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- [Agustina Ardisana](https://www.linkedin.com/in/agustinaardisana/)
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# [🇦🇷ESP] 🎬 Base de Datos de Películas y Series 🎬 (🚧 en construcción 🚧)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Este es el proyecto final de la currícula de la carrera de **Desarrollo Web Frontend** de **ADA ITW** y el primero trabajando con React.
 
-### Code Splitting
+<!-- ### 🖱️[click aquí para verlo](https://agustinaardisana.github.io/TP5-Comics_Search_Engine/) -->
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Tecnologías y diseño
 
-### Analyzing the Bundle Size
+Las tecnologías usadas para este proyecto fueron:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-HTML5
 
-### Making a Progressive Web App
+-CSS3
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+-Sass
 
-### Advanced Configuration
+-Javascript
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-APIs
 
-### Deployment
+El diseño a seguir fue pre-establecido y puede verse [🔗aquí🔗](https://frontend-proyecto-comics.adaitw.org/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Estado del Proyecto y Funcionalidades
 
-### `npm run build` fails to minify
+La presente entrega del proyecto se enfoca principalmente en **JavaScript asíncrono** y **Sass**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Consideraciones
+
+Esta es mi quinto proyecto de codeado así como la primera vez trabajando con APIs y Sass. Tengo un gran camino por delante para mejorar la calidad de mi código y todo feedback me ayudará a sentirme acompañada en el recorrido, siempre que venga desde un lugar de respeto.
+
+## Autora
+
+- [Agustina Ardisana](https://www.linkedin.com/in/agustinaardisana/)
