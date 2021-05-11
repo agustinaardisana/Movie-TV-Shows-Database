@@ -23,7 +23,6 @@ const Home = () => {
     fetch(baseURL + trendingMovies + apiKey + language)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results);
         SetDataMovies(data.results);
       });
   }, []);
@@ -33,7 +32,6 @@ const Home = () => {
     fetch(baseURL + trendingTV + apiKey + language)
       .then((res) => res.json())
       .then((data) => {
-        console.log(data.results);
         SetDataTV(data.results);
       });
   }, []);
@@ -46,9 +44,14 @@ const Home = () => {
         <CardSection
           title="Peliculas que son tendencia"
           dataMovies={dataMovies}
+          mediaType="movie"
         />
         {/* )} */}
-        <CardSection title="Series que son tendencia" dataTV={dataTV} />
+        <CardSection
+          title="Series que son tendencia"
+          dataTV={dataTV}
+          mediaType="tv"
+        />
       </HomeContainer>
       ;
     </>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Flex } from "./Commons";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CardContainer from "./CardContainer";
@@ -20,7 +20,9 @@ const StyledLink = styled(Link)`
   line-height: 20px;
 `;
 
-const CardSection = ({ title, dataMovies, dataTV }) => {
+const CardSection = ({ title, dataMovies, dataTV, mediaType }) => {
+  let location = useLocation();
+  console.log(location);
   return (
     <SectionContainer
       as="section"
@@ -28,12 +30,16 @@ const CardSection = ({ title, dataMovies, dataTV }) => {
       justifyContent="center"
     >
       <TitleContainer>
-        <StyledLink>
+        <StyledLink to={`/${mediaType}/trending/page/1`}>
           <h2>{title}</h2>
           <ArrowForwardIosIcon />
         </StyledLink>
       </TitleContainer>
-      <CardContainer dataMovies={dataMovies} dataTV={dataTV} />
+      <CardContainer
+        dataMovies={dataMovies}
+        dataTV={dataTV}
+        mediaType={mediaType}
+      />
     </SectionContainer>
   );
 };

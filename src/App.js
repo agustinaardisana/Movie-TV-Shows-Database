@@ -8,6 +8,11 @@ import Home from "./views/Home";
 import Movie from "./views/Movie";
 import TV from "./views/TV";
 import Page404 from "./views/Page404";
+import trendingMovies from "./views/TrendingMovies";
+import trendingTVShows from "./views/TrendingTVShows";
+import MovieInfo from "./views/MovieInfo";
+import TVShowInfo from "./views/TVShowInfo";
+import Search from "./views/Search";
 
 const GlobalStyle = createGlobalStyle`
 * {
@@ -41,7 +46,20 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
+            <Route
+              exact
+              path="/movie/trending/page/:pageNumber"
+              component={trendingMovies}
+            />
+            <Route exact path="/movie/:id/info" component={MovieInfo} />
             <Route exact path="/tv" component={TV} />
+            <Route
+              exact
+              path="/tv/trending/page/:pageNumber"
+              component={trendingTVShows}
+            />
+            <Route exact path="/tv/:id/info" component={TVShowInfo} />
+            <Route exact path="/search" component={Search} />
             <Route component={Page404} />
           </Switch>
           <Footer />

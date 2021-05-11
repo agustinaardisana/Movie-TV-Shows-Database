@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { FlexCenter } from "./Commons";
+import { Link } from "react-router-dom";
 
 const TitleContainer = styled(FlexCenter)`
   color: ${(props) => props.theme.colors.text};
@@ -52,19 +53,21 @@ const Img = styled.img`
 
 const CardTitle = styled.h2``;
 
-const Card = ({ item }) => {
+const Card = ({ item, mediaType }) => {
   return (
     <StyledCard>
-      <Img
-        src={
-          `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
-          "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
-        }
-        alt={item.title || item.name}
-      />
-      <TitleContainer>
-        <CardTitle>{item.title || item.name}</CardTitle>
-      </TitleContainer>
+      <Link to={`/${mediaType}/${item.id}/info`}>
+        <Img
+          src={
+            `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
+            "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
+          }
+          alt={item.title || item.name}
+        />
+        <TitleContainer>
+          <CardTitle>{item.title || item.name}</CardTitle>
+        </TitleContainer>
+      </Link>
     </StyledCard>
   );
 };
