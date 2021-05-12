@@ -43,6 +43,21 @@ const StyledCard = styled.article`
     transition: transform 0.35s;
     opacity: 1;
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.large}) {
+    width: 22%;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
+    width: 30%;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    width: 45%;
+  }
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    width: 90%;
+  }
 `;
 
 const Img = styled.img`

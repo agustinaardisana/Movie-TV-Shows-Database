@@ -46,25 +46,27 @@ Este es el proyecto final de la currícula de la carrera de **Desarrollo Web Fro
 
 Las tecnologías usadas para este proyecto fueron:
 
--HTML5
+-React
 
--CSS3
+-Styled Components
 
--Sass
+-Material UI
 
--Javascript
+-[API](https://developers.themoviedb.org/4/getting-started/authorization)
 
--APIs
+-Diseño Responsive
 
-El diseño a seguir fue pre-establecido y puede verse [🔗aquí🔗](https://frontend-proyecto-comics.adaitw.org/)
+-Accesibilidad
+
+El diseño a seguir fue pre-establecido y puede verse [🔗aquí🔗](https://ada-5ta-final-extra.netlify.app/))
 
 ## Estado del Proyecto y Funcionalidades
 
-La presente entrega del proyecto se enfoca principalmente en **JavaScript asíncrono** y **Sass**
+La presente entrega del proyecto se enfoca principalmente en **React** y **Styled Components**
 
 ## Consideraciones
 
-Esta es mi quinto proyecto de codeado así como la primera vez trabajando con APIs y Sass. Tengo un gran camino por delante para mejorar la calidad de mi código y todo feedback me ayudará a sentirme acompañada en el recorrido, siempre que venga desde un lugar de respeto.
+Soy una desarrolladora Trainee y este es mi primer proyecto formal trabajando con React. Tengo un gran camino por delante para mejorar la calidad de mi código y todo feedback me ayudará a sentirme acompañada en el recorrido, siempre que venga desde un lugar de respeto.
 
 ## Autora
 

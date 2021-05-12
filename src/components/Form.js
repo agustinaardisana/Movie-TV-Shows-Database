@@ -20,7 +20,9 @@ const StyledInput = styled.input`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.sm};
   transition: ease width 1s, ease opacity 1s;
-  /* opacity: 0; to opacity: 1 when active. how??? */
+  /* opacity: 0;
+  /* review  this, I don't think it works*/
+  opacity: ${(props) => (props.openInput ? "1" : "0")};
 `;
 
 const SearchButton = styled(AlignedButton)`
@@ -60,6 +62,7 @@ const Form = () => {
               <SearchIcon aria-label="búsqueda" fontSize="large" />
             </SearchButton>
             <StyledInput
+              openInput={openInput}
               type="text"
               placeholder="Títulos, personas, géneros..."
               aria-labelledby="title__search"

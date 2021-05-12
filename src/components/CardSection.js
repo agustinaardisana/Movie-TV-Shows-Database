@@ -18,6 +18,7 @@ const StyledLink = styled(Link)`
   display: flex;
   color: ${(props) => props.theme.colors.primary};
   line-height: 20px;
+  padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
 const CardSection = ({ title, dataMovies, dataTV, mediaType }) => {

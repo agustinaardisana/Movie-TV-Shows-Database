@@ -16,6 +16,19 @@ const Nav = styled(Flex)`
 
 const List = styled.ul`
   display: flex;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    position: ${(props) => props.theme.position.fixed};
+    bottom: 0;
+    left: 0;
+    background-color: ${(props) => props.theme.colors.primary};
+    width: 100%;
+    justify-content: space-around;
+    z-index: 3;
+    padding: ${(props) => props.theme.spacing.md};
+    /* opacity: 0.9; */
+    border-radius: 5px;
+  }
 `;
 
 const ListItem = styled.li`
@@ -24,6 +37,12 @@ const ListItem = styled.li`
 
 const StyledLink = styled(Link)`
   color: ${(props) => props.theme.colors.text};
+
+  /* & > svg {
+    @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+      font-size: 28px;
+    }
+  } */
 `;
 
 const NavBar = () => {

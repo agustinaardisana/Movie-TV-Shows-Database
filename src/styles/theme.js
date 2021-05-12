@@ -30,6 +30,14 @@ export const theme = {
   position: {
     parent: "relative",
     child: "absolute",
+    fixed: "fixed",
+  },
+
+  breakpoints: {
+    extraSmall: "450px",
+    small: "650px",
+    medium: "1000px",
+    large: "1200px",
   },
 
   // sizes: {
@@ -37,14 +45,8 @@ export const theme = {
   //   h2: "25px",
   //   h3: "20px",
   //   p: "10px"
-
   // },
 
-  // breakpoints: {
-  //   small: "600px",
-  //   medium: "1000px",
-  //   large: "1500px"
-  // }
   // Borders
   // Shadows
 };
