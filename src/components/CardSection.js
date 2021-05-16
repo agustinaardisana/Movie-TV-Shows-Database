@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
-const CardSection = ({ title, dataMovies, dataTV, mediaType, info }) => {
+const CardSection = ({ title, mediaType, info }) => {
   let location = useLocation();
 
   return (

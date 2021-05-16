@@ -4,14 +4,12 @@ const baseURL = "https://api.themoviedb.org/3/";
 const language = "&language=es-ES";
 
 export const defineQueriedList = (pathName, mediaType) => {
-  if (mediaType === "movie") {
-    if (pathName.includes("/trending/") || pathName === "/") {
-      return "trending/movie/week";
-    }
-  } else if (mediaType === "tv") {
-    if (pathName.includes("/trending/") || pathName === "/") {
-      return "trending/tv/week";
-    }
+  console.log(pathName, mediaType);
+
+  if (pathName.includes("/trending/") || pathName === "/") {
+    return `trending/${mediaType}/week`;
+  } else {
+    return `${mediaType}/${pathName}`;
   }
 };
 

@@ -1,3 +1,4 @@
+import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
 
@@ -7,22 +8,27 @@ const TVContainer = styled.main`
 `;
 
 const TV = () => {
+  const mediaType = "tv";
+  const infoPopular = useFetch("popular", mediaType);
+  const infoTopRated = useFetch("top_rated", mediaType);
+  const infoOnTheAir = useFetch("on_the_air", mediaType);
+
   return (
     <TVContainer>
       <CardSection
         title="Series Populares"
-        // dataMovies={dataMovies}
-        mediaType="tv"
+        mediaType={mediaType}
+        info={infoPopular}
       ></CardSection>
       <CardSection
         title="Series con mejores criticas"
-        // dataMovies={dataMovies}
-        mediaType="tv"
+        mediaType={mediaType}
+        info={infoTopRated}
       ></CardSection>
       <CardSection
         title="Series al aire"
-        // dataMovies={dataMovies}
-        mediaType="tv"
+        mediaType={mediaType}
+        info={infoOnTheAir}
       ></CardSection>
     </TVContainer>
   );

@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import useFetch from "../utils/hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
