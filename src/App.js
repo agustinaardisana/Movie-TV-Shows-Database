@@ -42,26 +42,27 @@ const App = () => {
       <BrowserRouter>
         <ThemeProvider theme={theme}>
           <GlobalStyle />
+
           <NavBar />
+
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
             <Route
-              exact
               path="/movie/trending/page/:pageNumber"
               component={trendingMovies}
             />
-            <Route exact path="/movie/:id/info" component={MovieInfo} />
+            <Route path="/movie/:id/info" component={MovieInfo} />
             <Route exact path="/tv" component={TV} />
             <Route
-              exact
               path="/tv/trending/page/:pageNumber"
               component={trendingTVShows}
             />
-            <Route exact path="/tv/:id/info" component={TVShowInfo} />
-            <Route exact path="/search" component={Search} />
+            <Route path="/tv/:id/info" component={TVShowInfo} />
+            <Route path="/search" component={Search} />
             <Route component={Page404} />
           </Switch>
+
           <Footer />
         </ThemeProvider>
       </BrowserRouter>

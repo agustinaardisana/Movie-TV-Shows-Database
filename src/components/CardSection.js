@@ -21,9 +21,9 @@ const StyledLink = styled(Link)`
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
-const CardSection = ({ title, dataMovies, dataTV, mediaType }) => {
+const CardSection = ({ title, dataMovies, dataTV, mediaType, info }) => {
   let location = useLocation();
-  console.log(location);
+
   return (
     <SectionContainer
       as="section"
@@ -36,11 +36,7 @@ const CardSection = ({ title, dataMovies, dataTV, mediaType }) => {
           <ArrowForwardIosIcon />
         </StyledLink>
       </TitleContainer>
-      <CardContainer
-        dataMovies={dataMovies}
-        dataTV={dataTV}
-        mediaType={mediaType}
-      />
+      <CardContainer mediaType={mediaType} info={info} />
     </SectionContainer>
   );
 };

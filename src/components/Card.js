@@ -59,11 +59,16 @@ const StyledCard = styled.article`
     width: 90%;
   }
 `;
+const ImgContainer = styled.div`
+  /* height: 394px; */
+`;
 
 const Img = styled.img`
   width: ${(props) => props.theme.width.full};
   height: auto;
   border-radius: ${(props) => props.theme.radius.regular};
+  /* height: 350px; */
+  /* object-fit: cover; */
 `;
 
 const CardTitle = styled.h2``;
@@ -72,13 +77,15 @@ const Card = ({ item, mediaType }) => {
   return (
     <StyledCard>
       <Link to={`/${mediaType}/${item.id}/info`}>
-        <Img
-          src={
-            `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
-            "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
-          }
-          alt={item.title || item.name}
-        />
+        <ImgContainer>
+          <Img
+            src={
+              `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
+              "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
+            }
+            alt={item.title || item.name}
+          />
+        </ImgContainer>
         <TitleContainer>
           <CardTitle>{item.title || item.name}</CardTitle>
         </TitleContainer>

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import useFetch from "../utils/hooks/useFetch";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
 
@@ -8,49 +10,24 @@ const HomeContainer = styled.main`
 `;
 
 const Home = () => {
-  const apiKey = "api_key=c5b12fd694a4290a27c963631e81509e";
-  const baseURL = "https://api.themoviedb.org";
-  const trendingMovies = "/3//trending/movies/week?";
-  const trendingTV = "/3//trending/tv/week?";
-  const language = "&language=es-ES";
-
-  // mediaType = "";
-
-  const [dataMovies, SetDataMovies] = useState([]);
-  const [dataTV, SetDataTV] = useState([]);
-
-  useEffect(() => {
-    fetch(baseURL + trendingMovies + apiKey + language)
-      .then((res) => res.json())
-      .then((data) => {
-        SetDataMovies(data.results);
-      });
-  }, []);
-  console.log(dataMovies);
-
-  useEffect(() => {
-    fetch(baseURL + trendingTV + apiKey + language)
-      .then((res) => res.json())
-      .then((data) => {
-        SetDataTV(data.results);
-      });
-  }, []);
-  console.log(dataTV);
+  let location = useLocation();
+  const mediaTypeMovie = "movie";
+  const mediaTypeTV = "tv";
+  const infoMovie = useFetch(location.pathname, mediaTypeMovie);
+  const infoTV = useFetch(location.pathname, mediaTypeTV);
 
   return (
     <>
       <HomeContainer>
-        {/* {dataMovies && ( */}
         <CardSection
           title="Peliculas que son tendencia"
-          dataMovies={dataMovies}
-          mediaType="movie"
+          mediaType={mediaTypeMovie}
+          info={infoMovie}
         />
-        {/* )} */}
         <CardSection
           title="Series que son tendencia"
-          dataTV={dataTV}
-          mediaType="tv"
+          mediaType={mediaTypeTV}
+          info={infoTV}
         />
       </HomeContainer>
       ;

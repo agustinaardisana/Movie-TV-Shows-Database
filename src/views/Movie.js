@@ -9,26 +9,13 @@ const MoviesContainer = styled.main`
 const Movie = () => {
   return (
     <MoviesContainer>
-      <CardSection
-        title="Peliculas Populares"
-        // dataMovies={dataMovies}
-        mediaType="movie"
-      ></CardSection>
+      <CardSection title="Peliculas Populares" mediaType="movie"></CardSection>
       <CardSection
         title="Peliculas con mejores criticas"
-        // dataMovies={dataMovies}
         mediaType="movie"
       ></CardSection>
-      <CardSection
-        title="Peliculas a estrenar"
-        // dataMovies={dataMovies}
-        mediaType="movie"
-      ></CardSection>
-      <CardSection
-        title="Peliculas en cine"
-        // dataMovies={dataMovies}
-        mediaType="movie"
-      ></CardSection>
+      <CardSection title="Peliculas a estrenar" mediaType="movie"></CardSection>
+      <CardSection title="Peliculas en cine" mediaType="movie"></CardSection>
     </MoviesContainer>
   );
 };
