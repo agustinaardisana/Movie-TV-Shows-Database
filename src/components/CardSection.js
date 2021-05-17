@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Flex } from "./Commons";
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
 import CardContainer from "./CardContainer";
@@ -21,9 +21,7 @@ const StyledLink = styled(Link)`
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
-const CardSection = ({ title, mediaType, info }) => {
-  let location = useLocation();
-
+const CardSection = ({ title, mediaType, info, category }) => {
   return (
     <SectionContainer
       as="section"
@@ -31,7 +29,12 @@ const CardSection = ({ title, mediaType, info }) => {
       justifyContent="center"
     >
       <TitleContainer>
-        <StyledLink to={`/${mediaType}/trending/page/1`}>
+        <StyledLink
+          to={{
+            pathname: `/${mediaType}/${category}/page/1`,
+            state: { category: { category } },
+          }}
+        >
           <h2>{title}</h2>
           <ArrowForwardIosIcon />
         </StyledLink>

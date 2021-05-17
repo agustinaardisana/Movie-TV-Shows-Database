@@ -22,11 +22,13 @@ const Home = () => {
           title="Peliculas que son tendencia"
           mediaType={mediaTypeMovie}
           info={infoMovie}
+          category="trending"
         />
         <CardSection
           title="Series que son tendencia"
           mediaType={mediaTypeTV}
           info={infoTV}
+          category="trending"
         />
       </HomeContainer>
       ;

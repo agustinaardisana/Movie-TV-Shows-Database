@@ -19,23 +19,26 @@ const Movie = () => {
       <CardSection
         title="Peliculas Populares"
         mediaType={mediaType}
-        // category={popular}
         info={infoPopular}
+        category="popular"
       ></CardSection>
       <CardSection
         title="Peliculas con mejores criticas"
         mediaType={mediaType}
         info={infoTopRated}
+        category="top_rated"
       ></CardSection>
       <CardSection
         title="Peliculas a estrenar"
         mediaType={mediaType}
         info={infoUpcoming}
+        category="upcoming"
       ></CardSection>
       <CardSection
         title="Peliculas en cine"
         mediaType={mediaType}
         info={infoNowPlaying}
+        category="now_playing"
       ></CardSection>
     </MoviesContainer>
   );

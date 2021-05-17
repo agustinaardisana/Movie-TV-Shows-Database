@@ -8,8 +8,8 @@ import Home from "./views/Home";
 import Movie from "./views/Movie";
 import TV from "./views/TV";
 import Page404 from "./views/Page404";
-import trendingMovies from "./views/TrendingMovies";
-import trendingTVShows from "./views/TrendingTVShows";
+import MoviesCategory from "./views/MoviesCategory";
+import TVShowsCategory from "./views/TVShowsCategory";
 import MovieInfo from "./views/MovieInfo";
 import TVShowInfo from "./views/TVShowInfo";
 import Search from "./views/Search";
@@ -49,14 +49,14 @@ const App = () => {
             <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
             <Route
-              path="/movie/trending/page/:pageNumber"
-              component={trendingMovies}
+              path="/movie/:Category/page/:pageNumber"
+              component={MoviesCategory}
             />
             <Route path="/movie/:id/info" component={MovieInfo} />
             <Route exact path="/tv" component={TV} />
             <Route
-              path="/tv/trending/page/:pageNumber"
-              component={trendingTVShows}
+              path="/tv/:category/page/:pageNumber"
+              component={TVShowsCategory}
             />
             <Route path="/tv/:id/info" component={TVShowInfo} />
             <Route path="/search" component={Search} />

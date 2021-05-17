@@ -19,16 +19,19 @@ const TV = () => {
         title="Series Populares"
         mediaType={mediaType}
         info={infoPopular}
+        category="popular"
       ></CardSection>
       <CardSection
         title="Series con mejores criticas"
         mediaType={mediaType}
         info={infoTopRated}
+        category="top_rated"
       ></CardSection>
       <CardSection
         title="Series al aire"
         mediaType={mediaType}
         info={infoOnTheAir}
+        category="on_the_air"
       ></CardSection>
     </TVContainer>
   );

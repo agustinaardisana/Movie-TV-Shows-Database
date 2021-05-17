@@ -2,25 +2,29 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
+import { generateTitle } from "../utils/variables";
 
-const TrendingShowsContainer = styled.main`
+const TVShowsCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
   width: ${(props) => props.theme.width.full};
 `;
 
-const TrendingTVShows = () => {
+const TVShowsCategory = () => {
   let location = useLocation();
   const mediaType = "tv";
   const info = useFetch(location.pathname, mediaType);
+  const category = location.state.category.category;
+  const title = generateTitle(mediaType, category);
+
   return (
-    <TrendingShowsContainer>
+    <TVShowsCategoryContainer>
       <CardSection
-        title="Series que son tendencia"
+        title={title}
         mediaType={mediaType}
         info={info}
       ></CardSection>
-    </TrendingShowsContainer>
+    </TVShowsCategoryContainer>
   );
 };
 
-export default TrendingTVShows;
+export default TVShowsCategory;
