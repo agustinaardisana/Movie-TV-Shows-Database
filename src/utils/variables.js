@@ -36,13 +36,5 @@ const titles = {
 };
 
 export const generateTitle = (mediaType, category) => {
-  for (let titlesMedia in titles) {
-    if (titlesMedia === mediaType) {
-      for (let titlesCategory in titles[titlesMedia]) {
-        if (titlesCategory === category) {
-          return titles[titlesMedia][titlesCategory];
-        }
-      }
-    }
-  }
+  return titles[mediaType][category];
 };
