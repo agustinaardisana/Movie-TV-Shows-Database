@@ -12,8 +12,8 @@ const MoviesCategoryContainer = styled.main`
 const MoviesCategory = () => {
   let location = useLocation();
   const mediaType = "movie";
-  const info = useFetch(location.pathname, mediaType);
   const category = location.state.category.category;
+  const info = useFetch(category, mediaType);
   const title = generateTitle(mediaType, category);
 
   return (

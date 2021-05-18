@@ -12,8 +12,8 @@ const TVShowsCategoryContainer = styled.main`
 const TVShowsCategory = () => {
   let location = useLocation();
   const mediaType = "tv";
-  const info = useFetch(location.pathname, mediaType);
   const category = location.state.category.category;
+  const info = useFetch(category, mediaType);
   const title = generateTitle(mediaType, category);
 
   return (
