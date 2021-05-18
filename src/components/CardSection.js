@@ -21,7 +21,7 @@ const StyledLink = styled(Link)`
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
-const CardSection = ({ title, mediaType, info, category }) => {
+const CardSection = ({ title, mediaType, info, category, preview }) => {
   return (
     <SectionContainer
       as="section"
@@ -39,7 +39,7 @@ const CardSection = ({ title, mediaType, info, category }) => {
           <ArrowForwardIosIcon />
         </StyledLink>
       </TitleContainer>
-      <CardContainer mediaType={mediaType} info={info} />
+      <CardContainer mediaType={mediaType} info={info} preview={preview} />
     </SectionContainer>
   );
 };

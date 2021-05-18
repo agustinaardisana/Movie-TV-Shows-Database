@@ -38,3 +38,8 @@ const titles = {
 export const generateTitle = (mediaType, category) => {
   return titles[mediaType][category];
 };
+
+export const showPreview = (pathName) => {
+  const previewPaths = ["/", "/movie", "/tv"];
+  return previewPaths.some((element) => element === pathName);
+};
