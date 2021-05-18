@@ -76,7 +76,12 @@ const CardTitle = styled.h2``;
 const Card = ({ item, mediaType }) => {
   return (
     <StyledCard>
-      <Link to={`/${mediaType}/${item.id}/info`}>
+      <Link
+        to={{
+          pathname: `/${mediaType}/${item.id}/info`,
+          state: { id: `${item.id}` },
+        }}
+      >
         <ImgContainer>
           <Img
             src={

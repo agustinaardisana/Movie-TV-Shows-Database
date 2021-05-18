@@ -5,6 +5,8 @@ const language = "&language=es-ES";
 export const defineQueriedList = (pathName, mediaType) => {
   if (pathName.includes("/trending/") || pathName === "/") {
     return `trending/${mediaType}/week`;
+
+    // Do I really need this one???
   } else if (pathName.includes("popular")) {
     return `${mediaType}/popular`;
   } else {

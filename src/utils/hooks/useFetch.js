@@ -7,7 +7,7 @@ const useFetch = (pathName, mediaType) => {
   useEffect(() => {
     fetch(createURL(pathName, mediaType))
       .then((res) => res.json())
-      .then((data) => setInfo(data.results));
+      .then((data) => setInfo(data.results || data));
   }, []);
 
   return info;
