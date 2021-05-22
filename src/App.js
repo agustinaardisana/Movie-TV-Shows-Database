@@ -52,7 +52,7 @@ const App = () => {
               path="/movie/:Category/page/:pageNumber"
               component={MoviesCategory}
             />
-            <Route path="/movie/:id/info" component={MovieInfo} />
+            <Route path="/movie/:id" component={MovieInfo} />
             <Route exact path="/tv" component={TV} />
             <Route
               path="/tv/:category/page/:pageNumber"

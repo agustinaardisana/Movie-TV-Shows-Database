@@ -3,12 +3,8 @@ const baseURL = "https://api.themoviedb.org/3/";
 const language = "&language=es-ES";
 
 export const defineQueriedList = (pathName, mediaType) => {
-  if (pathName.includes("/trending/") || pathName === "/") {
+  if (pathName.includes("trending") || pathName === "/") {
     return `trending/${mediaType}/week`;
-
-    // Do I really need this one???
-  } else if (pathName.includes("popular")) {
-    return `${mediaType}/popular`;
   } else {
     return `${mediaType}/${pathName}`;
   }
@@ -16,7 +12,6 @@ export const defineQueriedList = (pathName, mediaType) => {
 
 export const createURL = (pathName, mediaType) => {
   const queriedList = defineQueriedList(pathName, mediaType);
-
   return baseURL + queriedList + apiKey + language;
 };
 

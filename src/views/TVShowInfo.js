@@ -1,5 +1,7 @@
 import { useLocation } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
+import Hero from "../components/Hero";
+import MediaDetailNavBar from "../components/MediaDetailNavBar";
 
 const TVShowInfo = () => {
   let location = useLocation();
@@ -10,7 +12,12 @@ const TVShowInfo = () => {
     info && console.log(info);
   };
   console.log(fetchInfo(info));
-  return <p>TVShowInfo</p>;
+  return (
+    <>
+      <Hero info={info} />
+      <MediaDetailNavBar />
+    </>
+  );
 };
 
 export default TVShowInfo;

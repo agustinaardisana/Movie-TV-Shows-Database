@@ -1,22 +1,18 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Flex } from "./Commons";
+import { Nav, StyledUl, StyledLi } from "./Commons";
 
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import TheatersRoundedIcon from "@material-ui/icons/TheatersRounded";
 import LiveTvRoundedIcon from "@material-ui/icons/LiveTvRounded";
 import Form from "./Form";
 
-const Nav = styled(Flex)`
+const StyledNav = styled(Nav)`
   width: ${(props) => props.theme.width.full};
   height: 90px;
-  padding: ${(props) => props.theme.spacing.md};
-  background-color: ${(props) => props.theme.colors.primary};
 `;
 
-const List = styled.ul`
-  display: flex;
-
+const List = styled(StyledUl)`
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
     position: ${(props) => props.theme.position.fixed};
     bottom: 0;
@@ -29,10 +25,6 @@ const List = styled.ul`
     /* opacity: 0.9; */
     border-radius: 5px;
   }
-`;
-
-const ListItem = styled.li`
-  padding: 0 ${(props) => props.theme.spacing.sm};
 `;
 
 const StyledLink = styled(Link)`
@@ -48,26 +40,26 @@ const StyledLink = styled(Link)`
 const NavBar = () => {
   return (
     <>
-      <Nav as="nav">
+      <StyledNav>
         <List>
-          <ListItem>
+          <StyledLi>
             <StyledLink to="/">
               <HomeRoundedIcon aria-label="inicio" fontSize="large" />
             </StyledLink>
-          </ListItem>
-          <ListItem>
+          </StyledLi>
+          <StyledLi>
             <StyledLink to="/movie">
               <TheatersRoundedIcon aria-label="películas" fontSize="large" />
             </StyledLink>
-          </ListItem>
-          <ListItem>
+          </StyledLi>
+          <StyledLi>
             <StyledLink to="/tv">
               <LiveTvRoundedIcon aria-label="series" fontSize="large" />
             </StyledLink>
-          </ListItem>
+          </StyledLi>
         </List>
         <Form />
-      </Nav>
+      </StyledNav>
     </>
   );
 };

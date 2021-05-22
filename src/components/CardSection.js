@@ -32,7 +32,7 @@ const CardSection = ({ title, mediaType, info, category, preview }) => {
         <StyledLink
           to={{
             pathname: `/${mediaType}/${category}/page/1`,
-            state: { category: { category } },
+            state: { category: `${category}` },
           }}
         >
           <h2>{title}</h2>

@@ -24,8 +24,8 @@ const TitleContainer = styled(FlexCenter)`
 `;
 
 const StyledCard = styled.article`
-  width: 18%;
-  margin: ${(props) => props.theme.spacing.sm};
+  width: calc(19%);
+  margin: ${(props) => props.theme.spacing.xs};
   position: ${(props) => props.theme.position.parent};
   overflow: hidden;
   transition: all 0.3s ease 0s;
@@ -60,15 +60,15 @@ const StyledCard = styled.article`
   }
 `;
 const ImgContainer = styled.div`
-  /* height: 394px; */
+  height: 394px;
 `;
 
 const Img = styled.img`
   width: ${(props) => props.theme.width.full};
-  height: auto;
+  height: 100%;
   border-radius: ${(props) => props.theme.radius.regular};
-  /* height: 350px; */
-  /* object-fit: cover; */
+  object-fit: cover;
+  object-position: center;
 `;
 
 const CardTitle = styled.h2``;
