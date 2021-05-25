@@ -2,16 +2,18 @@ const apiKey = "?api_key=c5b12fd694a4290a27c963631e81509e";
 const baseURL = "https://api.themoviedb.org/3/";
 const language = "&language=es-ES";
 
-export const defineQueriedList = (pathName, mediaType) => {
-  if (pathName.includes("trending") || pathName === "/") {
+export const defineQueriedList = (pathName, mediaType, externalId) => {
+  if (externalId) {
+    return `${mediaType}/${pathName}/${externalId}`;
+  } else if (pathName.includes("trending") || pathName === "/") {
     return `trending/${mediaType}/week`;
   } else {
     return `${mediaType}/${pathName}`;
   }
 };
 
-export const createURL = (pathName, mediaType) => {
-  const queriedList = defineQueriedList(pathName, mediaType);
+export const createURL = (pathName, mediaType, externalId) => {
+  const queriedList = defineQueriedList(pathName, mediaType, externalId);
   return baseURL + queriedList + apiKey + language;
 };
 
@@ -40,3 +42,5 @@ export const showPreview = (pathName) => {
   const previewPaths = ["/", "/movie", "/tv"];
   return previewPaths.some((element) => element === pathName);
 };
+
+export const notAvailable = "Información no disponible";

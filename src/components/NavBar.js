@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Nav, StyledUl, StyledLi } from "./Commons";
 
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
@@ -27,9 +27,14 @@ const List = styled(StyledUl)`
   }
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   color: ${(props) => props.theme.colors.text};
+  opacity: 0.3;
 
+  &:hover,
+  &.selected {
+    opacity: 1;
+  }
   /* & > svg {
     @media (max-width: ${(props) => props.theme.breakpoints.small}) {
       font-size: 28px;
@@ -43,17 +48,17 @@ const NavBar = () => {
       <StyledNav>
         <List>
           <StyledLi>
-            <StyledLink to="/">
+            <StyledLink exact to="/" activeClassName="selected">
               <HomeRoundedIcon aria-label="inicio" fontSize="large" />
             </StyledLink>
           </StyledLi>
           <StyledLi>
-            <StyledLink to="/movie">
+            <StyledLink to="/movie" activeClassName="selected">
               <TheatersRoundedIcon aria-label="películas" fontSize="large" />
             </StyledLink>
           </StyledLi>
           <StyledLi>
-            <StyledLink to="/tv">
+            <StyledLink to="/tv" activeClassName="selected">
               <LiveTvRoundedIcon aria-label="series" fontSize="large" />
             </StyledLink>
           </StyledLi>

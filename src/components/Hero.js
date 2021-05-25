@@ -15,7 +15,6 @@ const HeroImage = styled.div`
 `;
 
 const Hero = ({ info }) => {
-  console.log(info);
   return (
     <HeroContainer>
       <HeroImage

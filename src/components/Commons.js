@@ -15,7 +15,7 @@ export const Flex = styled.div`
 `;
 
 export const StyledImg = styled.img`
-  width: ${(props) => props.theme.width.full};
+  width: ${(props) => props.width || props.theme.width.full};
   height: ${(props) => props.height || "auto"};
 `;
 

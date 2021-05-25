@@ -1,33 +1,69 @@
 import { Nav, StyledUl, StyledLi } from "./Commons";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const StyledNav = styled(Nav)`
   /* justify-content: space-around; */
 `;
 
-const StyledLink = styled(Link)`
+const StyledLink = styled(NavLink)`
   color: ${(props) => props.theme.colors.text};
   font-family: ${(props) => props.theme.fonts.families.title};
   font-size: ${(props) => props.theme.fonts.sizes.h3};
   font-weight: bold;
+  opacity: 0.3;
+
+  &:hover,
+  &.selected {
+    border-bottom: 2px solid ${(props) => props.theme.colors.text};
+    opacity: 1;
+  }
 `;
 
-const MediaDetailNavBar = ({ id }) => {
+const MediaDetailNavBar = ({ id, mediaType }) => {
   return (
     <StyledNav justifyContent="space-around">
       <StyledUl>
         <StyledLi>
-          <StyledLink to={`/movie/${id}/info`}>INFO</StyledLink>
+          <StyledLink
+            to={`/${mediaType}/${id}/info`}
+            activeClassName="selected"
+          >
+            INFO
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink to={`/movie/${id}/cast`}>REPARTO</StyledLink>
+          <StyledLink
+            to={`/${mediaType}/${id}/cast`}
+            activeClassName="selected"
+          >
+            REPARTO
+          </StyledLink>
         </StyledLi>
         <StyledLi>
-          <StyledLink to={`/movie/${id}/videos`}>VIDEOS</StyledLink>
+          {mediaType === "movies" ? (
+            <StyledLink
+              to={`/${mediaType}/${id}/videos`}
+              activeClassName="selected"
+            >
+              VIDEOS
+            </StyledLink>
+          ) : (
+            <StyledLink
+              to={`/${mediaType}/${id}/seasons/1`}
+              activeClassName="selected"
+            >
+              EPISODIOS
+            </StyledLink>
+          )}
         </StyledLi>
         <StyledLi>
-          <StyledLink to={`/movie/${id}/similar`}>SIMILARES</StyledLink>
+          <StyledLink
+            to={`/${mediaType}/${id}/similar`}
+            activeClassName="selected"
+          >
+            SIMILARES
+          </StyledLink>
         </StyledLi>
       </StyledUl>
     </StyledNav>
