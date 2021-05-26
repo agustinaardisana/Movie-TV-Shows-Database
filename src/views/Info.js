@@ -34,9 +34,15 @@ const Text = styled.p`
 const StyledLink = styled(Link)`
   margin-right: ${(props) => props.theme.spacing.sm};
   color: ${(props) => props.theme.colors.link};
+
+  &:hover {
+    color: ${(props) => props.theme.colors.text};
+    border-bottom: 2px solid ${(props) => props.theme.colors.text};
+  }
 `;
 
 const Info = ({ info, mediaType, externalIds }) => {
+  console.log(info);
   return (
     <>
       <FlexSection as="section">
@@ -79,10 +85,22 @@ const Info = ({ info, mediaType, externalIds }) => {
           {mediaType === "movie" && (
             <>
               <Text>
-                Presupuesto: {info.budget ? info.budget : notAvailable}
+                Presupuesto:{" "}
+                {info.budget
+                  ? info.budget.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })
+                  : notAvailable}
               </Text>
               <Text>
-                Recaudación: {info.revenue ? info.revenue : notAvailable}
+                Recaudación:{" "}
+                {info.revenue
+                  ? info.revenue.toLocaleString("en-US", {
+                      style: "currency",
+                      currency: "USD",
+                    })
+                  : notAvailable}
               </Text>
             </>
           )}
@@ -93,7 +111,9 @@ const Info = ({ info, mediaType, externalIds }) => {
                 .map((company) => company.name)
                 .join(", ")}
           </Text>
-          {externalIds && <ExternalLinks externalIds={externalIds} />}
+          {externalIds && (
+            <ExternalLinks externalIds={externalIds} homepage={info.homepage} />
+          )}
         </Container>
       </FlexSection>
     </>
