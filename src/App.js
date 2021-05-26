@@ -11,6 +11,7 @@ import Page404 from "./views/Page404";
 import MoviesCategory from "./views/MoviesCategory";
 import TVShowsCategory from "./views/TVShowsCategory";
 import InfoContainer from "./views/InfoContainer";
+import Genre from "./views/Genre";
 import Search from "./views/Search";
 
 const GlobalStyle = createGlobalStyle`
@@ -53,10 +54,16 @@ const App = () => {
             />
             <Route exact path="/tv" component={TV} />
             <Route
+              exact
+              path={`/:mediaType/:genre/:genreId/page/1`}
+              component={Genre}
+            />
+            <Route
               path="/tv/:category/page/:pageNumber"
               component={TVShowsCategory}
             />
             <Route path="/:mediaType/:id" component={InfoContainer} />
+
             <Route path="/search" component={Search} />
             <Route component={Page404} />
           </Switch>

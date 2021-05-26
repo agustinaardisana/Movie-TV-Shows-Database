@@ -16,6 +16,7 @@ export const theme = {
     primary: "#032541",
     primaryLight: "#D9D9D9",
     text: "#fff",
+    link: "#7f899b",
   },
 
   spacing: {

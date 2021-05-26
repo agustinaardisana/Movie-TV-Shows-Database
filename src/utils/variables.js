@@ -3,7 +3,9 @@ const baseURL = "https://api.themoviedb.org/3/";
 const language = "&language=es-ES";
 
 export const defineQueriedList = (pathName, mediaType, externalId) => {
-  if (externalId) {
+  if (!pathName) {
+    return `discover/${mediaType}`;
+  } else if (externalId) {
     return `${mediaType}/${pathName}/${externalId}`;
   } else if (pathName.includes("trending") || pathName === "/") {
     return `trending/${mediaType}/week`;
@@ -12,9 +14,12 @@ export const defineQueriedList = (pathName, mediaType, externalId) => {
   }
 };
 
-export const createURL = (pathName, mediaType, externalId) => {
+export const createURL = (pathName, mediaType, externalId, optionalQuery) => {
   const queriedList = defineQueriedList(pathName, mediaType, externalId);
-  return baseURL + queriedList + apiKey + language;
+  const optionalQueryPath = optionalQuery || "";
+
+  console.log(baseURL + queriedList + apiKey + language + optionalQueryPath);
+  return baseURL + queriedList + apiKey + language + optionalQueryPath;
 };
 
 const titles = {

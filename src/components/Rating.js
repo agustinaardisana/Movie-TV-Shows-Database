@@ -6,6 +6,7 @@ import styled from "styled-components";
 
 const FlexContainer = styled(Flex)`
   margin-bottom: ${(props) => props.theme.spacing.md};
+  color: ${(props) => props.theme.colors.link};
 `;
 
 const Rating = ({ rating }) => {

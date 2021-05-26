@@ -33,7 +33,7 @@ const Text = styled.p`
 
 const StyledLink = styled(Link)`
   margin-right: ${(props) => props.theme.spacing.sm};
-  color: ${(props) => props.theme.colors.text};
+  color: ${(props) => props.theme.colors.link};
 `;
 
 const Info = ({ info, mediaType, externalIds }) => {
@@ -62,7 +62,14 @@ const Info = ({ info, mediaType, externalIds }) => {
             {info.genres &&
               info.genres.map((genre) => (
                 <StyledLink
-                  to="{`/${mediaType}/${genre.name}/`}"
+                  to={{
+                    pathname: `/${mediaType}/${genre.name}/${genre.id}/page/1`,
+                    state: {
+                      mediaType: `${mediaType}`,
+                      genreName: `${genre.name}`,
+                      genreId: `${genre.id}`,
+                    },
+                  }}
                   key={genre.name}
                 >
                   {genre.name}
