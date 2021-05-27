@@ -12,6 +12,7 @@ import MoviesCategory from "./views/MoviesCategory";
 import TVShowsCategory from "./views/TVShowsCategory";
 import InfoContainer from "./views/InfoContainer";
 import Genre from "./views/Genre";
+import CastInfoContainer from "./views/CastInfoContainer";
 import Search from "./views/Search";
 
 const GlobalStyle = createGlobalStyle`
@@ -63,7 +64,11 @@ const App = () => {
               component={TVShowsCategory}
             />
             <Route path="/:mediaType/:id" component={InfoContainer} />
-
+            {/* <Route
+              exact
+              path={`/person/:personId/info`}
+              component={CastInfoContainer}
+            /> */}
             <Route path="/search" component={Search} />
             <Route component={Page404} />
           </Switch>

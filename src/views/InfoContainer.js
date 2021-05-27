@@ -13,10 +13,11 @@ const InfoContainer = () => {
   const { mediaType, id } = useParams();
   const externalLinks = useFetch(id, mediaType, "external_ids");
   const info = useFetch(id, mediaType);
+  console.log(useParams());
 
   return (
     <>
-      <Hero info={info} />
+      {mediaType !== "person" && <Hero info={info} />}
       <MediaDetailNavBar id={id} mediaType={mediaType} />
 
       <Switch>

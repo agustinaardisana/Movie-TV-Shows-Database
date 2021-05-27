@@ -77,14 +77,14 @@ const CardTitle = styled.h2``;
 const Card = ({ item, mediaType, isCast }) => {
   return (
     <StyledCard>
-      <Link
-        to={{
-          pathname: `/${mediaType}/${item.id}/info`,
-          state: { id: `${item.id}` },
-        }}
-      >
-        <ImgContainer>
-          {isCast ? (
+      {isCast && (
+        <Link
+          to={{
+            pathname: `/person/${item.id}/info`,
+            state: { id: `${item.id}` },
+          }}
+        >
+          <ImgContainer>
             <Img
               src={
                 item.profile_path
@@ -93,7 +93,20 @@ const Card = ({ item, mediaType, isCast }) => {
               }
               alt={item.name}
             />
-          ) : (
+          </ImgContainer>
+          <TitleContainer>
+            <CardTitle>{item.title || item.name}</CardTitle>
+          </TitleContainer>
+        </Link>
+      )}
+      {!isCast && (
+        <Link
+          to={{
+            pathname: `/${mediaType}/${item.id}/info`,
+            state: { id: `${item.id}` },
+          }}
+        >
+          <ImgContainer>
             <Img
               src={
                 `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
@@ -101,12 +114,12 @@ const Card = ({ item, mediaType, isCast }) => {
               }
               alt={item.title || item.name}
             />
-          )}
-        </ImgContainer>
-        <TitleContainer>
-          <CardTitle>{item.title || item.name}</CardTitle>
-        </TitleContainer>
-      </Link>
+          </ImgContainer>
+          <TitleContainer>
+            <CardTitle>{item.title || item.name}</CardTitle>
+          </TitleContainer>
+        </Link>
+      )}
     </StyledCard>
   );
 };

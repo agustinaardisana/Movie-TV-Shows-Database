@@ -1,11 +1,12 @@
-import { FlexCenter, StyledImg } from "../components/Commons";
+import { Flex, StyledImg } from "../components/Commons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import Rating from "../components/Rating";
 import ExternalLinks from "../components/ExternalLinks";
 import { notAvailable } from "../utils/variables";
+import { imgNotAvailable } from "../utils/variables";
 
-const FlexSection = styled(FlexCenter)`
+const FlexSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.md};
 `;
@@ -46,75 +47,108 @@ const Info = ({ info, mediaType, externalIds }) => {
   return (
     <>
       <FlexSection as="section">
-        <Img
-          src={`https://image.tmdb.org/t/p/w342/${info.poster_path}`}
-          alt={info.name}
-          width="250px"
-        />
-        <Container>
-          <Title>{info.name || info.title}</Title>
-          <Rating rating={info.vote_average} />
-          <Text>{info.overview}</Text>
-          {mediaType === "tv" && (
-            <>
-              <Text>Temporadas: {info.number_of_seasons}</Text>
-              <Text>Episodios: {info.number_of_episodes}</Text>
-            </>
-          )}
+        {mediaType !== "person" && (
+          <>
+            <Img
+              src={`https://image.tmdb.org/t/p/w342/${info.poster_path}`}
+              alt={info.name}
+              width="250px"
+            />
+            <Container>
+              <Title>{info.name || info.title}</Title>
+              <Rating rating={info.vote_average} />
+              <Text>{info.overview}</Text>
+              {mediaType === "tv" && (
+                <>
+                  <Text>Temporadas: {info.number_of_seasons}</Text>
+                  <Text>Episodios: {info.number_of_episodes}</Text>
+                </>
+              )}
 
-          <Text>Duración: {info.episode_run_time || info.runtime} min.</Text>
-          <Text>
-            Géneros:{" "}
-            {info.genres &&
-              info.genres.map((genre) => (
-                <StyledLink
-                  to={{
-                    pathname: `/${mediaType}/${genre.name}/${genre.id}/page/1`,
-                    state: {
-                      mediaType: `${mediaType}`,
-                      genreName: `${genre.name}`,
-                      genreId: `${genre.id}`,
-                    },
-                  }}
-                  key={genre.name}
-                >
-                  {genre.name}
-                </StyledLink>
-              ))}
-          </Text>
-          {mediaType === "movie" && (
-            <>
               <Text>
-                Presupuesto:{" "}
-                {info.budget
-                  ? info.budget.toLocaleString("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                    })
-                  : notAvailable}
+                Duración: {info.episode_run_time || info.runtime} min.
               </Text>
               <Text>
-                Recaudación:{" "}
-                {info.revenue
-                  ? info.revenue.toLocaleString("en-US", {
-                      style: "currency",
-                      currency: "USD",
-                    })
-                  : notAvailable}
+                Géneros:{" "}
+                {info.genres &&
+                  info.genres.map((genre) => (
+                    <StyledLink
+                      to={{
+                        pathname: `/${mediaType}/${genre.name}/${genre.id}/page/1`,
+                        state: {
+                          mediaType: `${mediaType}`,
+                          genreName: `${genre.name}`,
+                          genreId: `${genre.id}`,
+                        },
+                      }}
+                      key={genre.name}
+                    >
+                      {genre.name}
+                    </StyledLink>
+                  ))}
               </Text>
-            </>
-          )}
-          <Text>
-            Producción:{" "}
-            {info.production_companies &&
-              info.production_companies
-                .map((company) => company.name)
-                .join(", ")}
-          </Text>
-          {externalIds && (
-            <ExternalLinks externalIds={externalIds} homepage={info.homepage} />
-          )}
-        </Container>
+              {mediaType === "movie" && (
+                <>
+                  <Text>
+                    Presupuesto:{" "}
+                    {info.budget
+                      ? info.budget.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })
+                      : notAvailable}
+                  </Text>
+                  <Text>
+                    Recaudación:{" "}
+                    {info.revenue
+                      ? info.revenue.toLocaleString("en-US", {
+                          style: "currency",
+                          currency: "USD",
+                        })
+                      : notAvailable}
+                  </Text>
+                </>
+              )}
+              <Text>
+                Producción:{" "}
+                {info.production_companies &&
+                  info.production_companies
+                    .map((company) => company.name)
+                    .join(", ")}
+              </Text>
+
+              {externalIds && (
+                <ExternalLinks
+                  externalIds={externalIds}
+                  homepage={info.homepage}
+                />
+              )}
+            </Container>{" "}
+          </>
+        )}
+        {mediaType === "person" && (
+          <>
+            <Img
+              src={
+                `https://image.tmdb.org/t/p/w342/${info.profile_path}` ||
+                imgNotAvailable
+              }
+              alt={info.name}
+              width="250px"
+            />
+            <Container>
+              <Title>{info.name}</Title>
+              <Text>{info.biography}</Text>
+              {externalIds && (
+                <ExternalLinks
+                  externalIds={externalIds}
+                  homepage={info.homepage}
+                  mediaType={mediaType}
+                />
+              )}
+            </Container>
+          </>
+        )}
       </FlexSection>
     </>
   );

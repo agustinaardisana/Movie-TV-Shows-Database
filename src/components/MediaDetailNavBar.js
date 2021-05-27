@@ -32,45 +32,59 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
             INFO
           </StyledLink>
         </StyledLi>
-        <StyledLi>
-          <StyledLink
-            to={{
-              pathname: `/${mediaType}/${id}/cast`,
-              state: {
-                id: `${id}`,
-                mediaType: `${mediaType}`,
-              },
-            }}
-            activeClassName="selected"
-          >
-            REPARTO
-          </StyledLink>
-        </StyledLi>
-        <StyledLi>
-          {mediaType === "movies" ? (
+        {mediaType === "person" && (
+          <StyledLi>
             <StyledLink
-              to={`/${mediaType}/${id}/videos`}
+              to={`/${mediaType}/${id}/credits`}
               activeClassName="selected"
             >
-              VIDEOS
+              CREDITOS
             </StyledLink>
-          ) : (
-            <StyledLink
-              to={`/${mediaType}/${id}/seasons/1`}
-              activeClassName="selected"
-            >
-              EPISODIOS
-            </StyledLink>
-          )}
-        </StyledLi>
-        <StyledLi>
-          <StyledLink
-            to={`/${mediaType}/${id}/similar`}
-            activeClassName="selected"
-          >
-            SIMILARES
-          </StyledLink>
-        </StyledLi>
+          </StyledLi>
+        )}
+        {mediaType !== "person" && (
+          <>
+            <StyledLi>
+              <StyledLink
+                to={{
+                  pathname: `/${mediaType}/${id}/cast`,
+                  state: {
+                    id: `${id}`,
+                    mediaType: `${mediaType}`,
+                  },
+                }}
+                activeClassName="selected"
+              >
+                REPARTO
+              </StyledLink>
+            </StyledLi>
+            <StyledLi>
+              {mediaType === "movies" ? (
+                <StyledLink
+                  to={`/${mediaType}/${id}/videos`}
+                  activeClassName="selected"
+                >
+                  VIDEOS
+                </StyledLink>
+              ) : (
+                <StyledLink
+                  to={`/${mediaType}/${id}/seasons/1`}
+                  activeClassName="selected"
+                >
+                  EPISODIOS
+                </StyledLink>
+              )}
+            </StyledLi>
+            <StyledLi>
+              <StyledLink
+                to={`/${mediaType}/${id}/similar`}
+                activeClassName="selected"
+              >
+                SIMILARES
+              </StyledLink>
+            </StyledLi>{" "}
+          </>
+        )}
       </StyledUl>
     </StyledNav>
   );

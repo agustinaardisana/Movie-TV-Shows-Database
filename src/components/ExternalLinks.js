@@ -18,8 +18,12 @@ const StyledLink = styled.a`
   font-size: ${(props) => props.theme.fonts.sizes.h1};
 `;
 
-const ExternalLinks = ({ externalIds, homepage }) => {
+const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
   const { imdb_id, facebook_id, twitter_id, instagram_id } = externalIds;
+  const imdbLink =
+    mediaType !== "person"
+      ? `https://www.imdb.com/title/${imdb_id}`
+      : `https://www.imdb.com/name/${imdb_id}`;
 
   //   const externalURLs = {
   //     imdb_id: "https://www.imdb.com/title/",
@@ -35,10 +39,7 @@ const ExternalLinks = ({ externalIds, homepage }) => {
   return (
     <FlexContainer>
       {imdb_id && (
-        <StyledLink
-          target="_blank"
-          href={`https://www.imdb.com/title/${imdb_id}`}
-        >
+        <StyledLink target="_blank" href={imdbLink}>
           {/* <LinkIcon fontSize="large" /> */}
           <FontAwesomeIcon icon={faImdb} />
         </StyledLink>
