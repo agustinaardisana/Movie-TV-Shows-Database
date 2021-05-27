@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { FlexCenter } from "./Commons";
 import { Link } from "react-router-dom";
+import { imgNotAvailable } from "../utils/variables";
 
 const TitleContainer = styled(FlexCenter)`
   color: ${(props) => props.theme.colors.text};
@@ -73,7 +74,7 @@ const Img = styled.img`
 
 const CardTitle = styled.h2``;
 
-const Card = ({ item, mediaType }) => {
+const Card = ({ item, mediaType, isCast }) => {
   return (
     <StyledCard>
       <Link
@@ -83,13 +84,24 @@ const Card = ({ item, mediaType }) => {
         }}
       >
         <ImgContainer>
-          <Img
-            src={
-              `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
-              "https://upload.wikimedia.org/wikipedia/commons/d/da/Imagen_no_disponible.svg"
-            }
-            alt={item.title || item.name}
-          />
+          {isCast ? (
+            <Img
+              src={
+                item.profile_path
+                  ? `https://image.tmdb.org/t/p/w342/${item.profile_path}`
+                  : imgNotAvailable
+              }
+              alt={item.name}
+            />
+          ) : (
+            <Img
+              src={
+                `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
+                imgNotAvailable
+              }
+              alt={item.title || item.name}
+            />
+          )}
         </ImgContainer>
         <TitleContainer>
           <CardTitle>{item.title || item.name}</CardTitle>

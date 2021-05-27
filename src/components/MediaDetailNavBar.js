@@ -34,7 +34,13 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
         </StyledLi>
         <StyledLi>
           <StyledLink
-            to={`/${mediaType}/${id}/cast`}
+            to={{
+              pathname: `/${mediaType}/${id}/cast`,
+              state: {
+                id: `${id}`,
+                mediaType: `${mediaType}`,
+              },
+            }}
             activeClassName="selected"
           >
             REPARTO

@@ -20,9 +20,17 @@ const InfoContainer = () => {
       <MediaDetailNavBar id={id} mediaType={mediaType} />
 
       <Switch>
-        <Route exact path={`${url}/info`}>
-          <Info info={info} mediaType={mediaType} externalIds={externalLinks} />
-        </Route>
+        <Route
+          exact
+          path={`${url}/info`}
+          component={() => (
+            <Info
+              info={info}
+              mediaType={mediaType}
+              externalIds={externalLinks}
+            />
+          )}
+        ></Route>
         <Route exact path={`${url}/cast`} component={Cast} />
         {mediaType === "movies" ? (
           <Route exact path={`${url}/videos`} component={Videos} />

@@ -6,7 +6,7 @@ const StyledCardContainer = styled(Flex)`
   width: ${(props) => props.theme.width.full};
 `;
 
-const CardContainer = ({ mediaType, info, preview }) => {
+const CardContainer = ({ mediaType, info, preview, isCast }) => {
   let windowSize = window.innerWidth;
   let index = 0;
   const defineIndex = (windowSize) => {
@@ -34,7 +34,14 @@ const CardContainer = ({ mediaType, info, preview }) => {
               }
             })
           : info.map((item) => {
-              return <Card item={item} key={item.id} mediaType={mediaType} />;
+              return (
+                <Card
+                  item={item}
+                  key={item.id}
+                  mediaType={mediaType}
+                  isCast={isCast}
+                />
+              );
             })}
       </StyledCardContainer>
     </>

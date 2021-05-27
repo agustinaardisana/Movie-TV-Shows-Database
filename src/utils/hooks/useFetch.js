@@ -7,8 +7,11 @@ const useFetch = (pathName, mediaType, externalId, optionalQuery) => {
   useEffect(() => {
     fetch(createURL(pathName, mediaType, externalId, optionalQuery))
       .then((res) => res.json())
-      .then((data) => setInfo(data.results || data));
-  }, [pathName, mediaType, externalId]);
+      .then((data) => {
+        // console.log(data);
+        setInfo(data.results || data);
+      });
+  }, [pathName, mediaType, externalId, optionalQuery]);
 
   return info;
 };
