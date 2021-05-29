@@ -89,7 +89,14 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
             </StyledLi>
             <StyledLi>
               <StyledLink
-                to={`/${mediaType}/${id}/similar`}
+                // to={`/${mediaType}/${id}/similar`}
+                to={{
+                  pathname: `/${mediaType}/${id}/similar`,
+                  state: {
+                    id: `${id}`,
+                    mediaType: `${mediaType}`,
+                  },
+                }}
                 activeClassName="selected"
               >
                 SIMILARES

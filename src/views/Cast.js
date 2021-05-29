@@ -15,7 +15,6 @@ const Cast = () => {
   const info = useFetch(id, mediaType, "credits");
   const cast = info && info.cast;
 
-  console.log(info);
   return (
     <StyledSection>
       {cast && (

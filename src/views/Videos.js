@@ -1,7 +1,7 @@
 import useFetch from "../utils/hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-import { Flex, FlexCenter } from "../components/Commons";
+import { Flex } from "../components/Commons";
 
 const StyledSection = styled(Flex)`
   margin: ${(props) => props.theme.spacing.lg} 0;
@@ -38,7 +38,7 @@ const Videos = () => {
   };
 
   return (
-    <StyledSection as="section" justifyContent="center">
+    <StyledSection as="section" justifyContent="center" flexWrap="wrap">
       {info.map((video) => (
         <Container as="article" flexDirection="column">
           <StyledIFrame
