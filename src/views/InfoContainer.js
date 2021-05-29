@@ -33,7 +33,7 @@ const InfoContainer = () => {
           )}
         ></Route>
         <Route exact path={`${url}/cast`} component={Cast} />
-        {mediaType === "movies" ? (
+        {mediaType === "movie" ? (
           <Route exact path={`${url}/videos`} component={Videos} />
         ) : (
           <Route exact path={`${url}/seasons/1`} component={Seasons} />

@@ -35,7 +35,6 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
         {mediaType === "person" && (
           <StyledLi>
             <StyledLink
-              // to={`/${mediaType}/${id}/credits`}
               to={{
                 pathname: `/${mediaType}/${id}/credits`,
                 state: {
@@ -66,9 +65,15 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
               </StyledLink>
             </StyledLi>
             <StyledLi>
-              {mediaType === "movies" ? (
+              {mediaType === "movie" ? (
                 <StyledLink
-                  to={`/${mediaType}/${id}/videos`}
+                  to={{
+                    pathname: `/${mediaType}/${id}/videos`,
+                    state: {
+                      id: `${id}`,
+                      mediaType: `${mediaType}`,
+                    },
+                  }}
                   activeClassName="selected"
                 >
                   VIDEOS

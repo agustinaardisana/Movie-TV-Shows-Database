@@ -15,8 +15,6 @@ const Credits = () => {
   const info = useFetch(id, mediaType, "combined_credits");
   const credits = info && info.cast;
 
-  console.log(credits);
-
   return (
     <StyledSection>
       {credits && <CardContainer mediaType={mediaType} info={credits} />}

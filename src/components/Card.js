@@ -72,7 +72,9 @@ const Img = styled.img`
   object-position: center;
 `;
 
-const CardTitle = styled.h2``;
+const CardTitle = styled.h2`
+  /* style */
+`;
 
 const Card = ({ item, mediaType, isCast }) => {
   return (
