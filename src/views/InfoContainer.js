@@ -7,13 +7,13 @@ import Videos from "./Videos";
 import Cast from "./Cast";
 import Similar from "./Similar";
 import Seasons from "./Seasons";
+import Credits from "./Credits";
 
 const InfoContainer = () => {
   const { url } = useRouteMatch();
   const { mediaType, id } = useParams();
   const externalLinks = useFetch(id, mediaType, "external_ids");
   const info = useFetch(id, mediaType);
-  console.log(useParams());
 
   return (
     <>
@@ -39,6 +39,7 @@ const InfoContainer = () => {
           <Route exact path={`${url}/seasons/1`} component={Seasons} />
         )}{" "}
         <Route exact path={`${url}/similar`} component={Similar} />
+        <Route exact path={`${url}/credits`} component={Credits} />
       </Switch>
     </>
   );

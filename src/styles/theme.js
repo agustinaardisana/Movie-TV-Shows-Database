@@ -8,7 +8,7 @@ export const theme = {
       h1: "30px",
       h2: "25px",
       h3: "20px",
-      p: "10px",
+      p: "18px",
     },
   },
 

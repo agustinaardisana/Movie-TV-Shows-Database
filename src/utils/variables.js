@@ -18,7 +18,7 @@ export const createURL = (pathName, mediaType, externalId, optionalQuery) => {
   const queriedList = defineQueriedList(pathName, mediaType, externalId);
   const optionalQueryPath = optionalQuery || "";
 
-  // console.log(baseURL + queriedList + apiKey + language + optionalQueryPath);
+  console.log(baseURL + queriedList + apiKey + language + optionalQueryPath);
   return baseURL + queriedList + apiKey + language + optionalQueryPath;
 };
 

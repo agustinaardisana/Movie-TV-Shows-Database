@@ -35,7 +35,14 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
         {mediaType === "person" && (
           <StyledLi>
             <StyledLink
-              to={`/${mediaType}/${id}/credits`}
+              // to={`/${mediaType}/${id}/credits`}
+              to={{
+                pathname: `/${mediaType}/${id}/credits`,
+                state: {
+                  id: `${id}`,
+                  mediaType: `${mediaType}`,
+                },
+              }}
               activeClassName="selected"
             >
               CREDITOS

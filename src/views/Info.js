@@ -9,6 +9,7 @@ import { imgNotAvailable } from "../utils/variables";
 const FlexSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.md};
+  /* min-height: 80vh; */
 `;
 
 const Img = styled(StyledImg)`
@@ -29,7 +30,8 @@ const Title = styled.h2`
 
 const Text = styled.p`
   margin-bottom: ${(props) => props.theme.spacing.sm};
-  line-height: 20px;
+  font-size: ${(props) => props.theme.fonts.sizes.p};
+  /* line-height: 25px; */
 `;
 
 const StyledLink = styled(Link)`
@@ -52,7 +54,7 @@ const Info = ({ info, mediaType, externalIds }) => {
             <Img
               src={`https://image.tmdb.org/t/p/w342/${info.poster_path}`}
               alt={info.name}
-              width="250px"
+              width="300px"
             />
             <Container>
               <Title>{info.name || info.title}</Title>
@@ -134,7 +136,7 @@ const Info = ({ info, mediaType, externalIds }) => {
                 imgNotAvailable
               }
               alt={info.name}
-              width="250px"
+              width="350px"
             />
             <Container>
               <Title>{info.name}</Title>
