@@ -13,17 +13,22 @@ const StyledSelect = styled.select`
   margin-left: ${(props) => props.theme.spacing.sm};
 `;
 
-const SeasonsSelect = ({ seasons }) => {
+const SeasonsSelect = ({ seasons, changeSeasonNumberValue, seasonNumber }) => {
+  const handleChange = (e) => changeSeasonNumberValue(e);
+
   return (
-    <StyledSelect>
-      {seasons.map(
-        (season) =>
-          season.name !== "Especiales" && (
+    <StyledSelect onChange={handleChange} value={seasonNumber}>
+      {seasons &&
+        seasons
+          .filter(
+            (validSeason) =>
+              validSeason.episode_count && validSeason.name !== "Especiales"
+          )
+          .map((season) => (
             <option key={season.season_number} value={season.season_number}>
               Temporada {season.season_number}
             </option>
-          )
-      )}
+          ))}
     </StyledSelect>
   );
 };

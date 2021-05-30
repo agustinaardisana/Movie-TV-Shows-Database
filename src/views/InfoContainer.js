@@ -38,7 +38,7 @@ const InfoContainer = () => {
         ) : (
           <Route
             exact
-            path={`${url}/seasons/1`}
+            path={`${url}/seasons/:seasonNumber`}
             component={() => <Seasons seasons={info.seasons} />}
           />
         )}{" "}
