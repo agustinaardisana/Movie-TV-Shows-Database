@@ -80,7 +80,13 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
                 </StyledLink>
               ) : (
                 <StyledLink
-                  to={`/${mediaType}/${id}/seasons/1`}
+                  to={{
+                    pathname: `/${mediaType}/${id}/seasons/1`,
+                    state: {
+                      id: `${id}`,
+                      mediaType: `${mediaType}`,
+                    },
+                  }}
                   activeClassName="selected"
                 >
                   EPISODIOS
@@ -89,7 +95,6 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
             </StyledLi>
             <StyledLi>
               <StyledLink
-                // to={`/${mediaType}/${id}/similar`}
                 to={{
                   pathname: `/${mediaType}/${id}/similar`,
                   state: {

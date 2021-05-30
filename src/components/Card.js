@@ -26,7 +26,8 @@ const TitleContainer = styled(FlexCenter)`
 
 const StyledCard = styled.article`
   width: calc(19%);
-  margin: ${(props) => props.theme.spacing.xs};
+  margin: ${(props) => props.theme.spacing.sm}
+    ${(props) => props.theme.spacing.xs};
   position: ${(props) => props.theme.position.parent};
   overflow: hidden;
   transition: all 0.3s ease 0s;

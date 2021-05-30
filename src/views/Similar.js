@@ -1,12 +1,12 @@
 import { useLocation } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
-// import { Flex } from "../components/Commons";
 import CardContainer from "../components/CardContainer";
 
 const StyledSection = styled.section`
-  margin: ${(props) => props.theme.spacing.lg} 0;
-  padding: 0 ${(props) => props.theme.spacing.md};
+  padding: ${(props) => props.theme.spacing.lg}
+    ${(props) => props.theme.spacing.md};
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 const Similar = () => {
@@ -14,9 +14,6 @@ const Similar = () => {
   const mediaType = location.state.mediaType;
   const id = location.state.id;
   const info = useFetch(id, mediaType, "similar");
-  console.log(info);
-
-  // return <p>Similar</p>;
 
   return (
     <StyledSection>

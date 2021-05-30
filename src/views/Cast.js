@@ -4,8 +4,9 @@ import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledSection = styled.section`
-  margin: ${(props) => props.theme.spacing.lg} 0;
-  padding: 0 ${(props) => props.theme.spacing.md};
+  padding: ${(props) => props.theme.spacing.lg}
+    ${(props) => props.theme.spacing.md};
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 const Cast = () => {

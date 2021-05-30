@@ -7,7 +7,7 @@ export const theme = {
     sizes: {
       h1: "30px",
       h2: "25px",
-      h3: "20px",
+      h3: "23px",
       p: "18px",
     },
   },
@@ -37,6 +37,7 @@ export const theme = {
 
   radius: {
     regular: "8px",
+    min: "4px",
   },
 
   position: {

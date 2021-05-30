@@ -36,7 +36,11 @@ const InfoContainer = () => {
         {mediaType === "movie" ? (
           <Route exact path={`${url}/videos`} component={Videos} />
         ) : (
-          <Route exact path={`${url}/seasons/1`} component={Seasons} />
+          <Route
+            exact
+            path={`${url}/seasons/1`}
+            component={() => <Seasons seasons={info.seasons} />}
+          />
         )}{" "}
         <Route exact path={`${url}/similar`} component={Similar} />
         <Route exact path={`${url}/credits`} component={Credits} />

@@ -4,8 +4,9 @@ import styled from "styled-components";
 import { Flex } from "../components/Commons";
 
 const StyledSection = styled(Flex)`
-  margin: ${(props) => props.theme.spacing.lg} 0;
-  padding: 0 ${(props) => props.theme.spacing.md};
+  padding: ${(props) => props.theme.spacing.lg}
+    ${(props) => props.theme.spacing.md};
+  background-color: ${(props) => props.theme.colors.primary};
 `;
 
 const Container = styled(Flex)`
@@ -31,7 +32,6 @@ const Videos = () => {
   const mediaType = location.state.mediaType;
   const id = location.state.id;
   const info = useFetch(id, mediaType, "videos");
-  console.log(info);
 
   const createSource = (site) => {
     return site === "YouTube" && "https://www.youtube.com/embed/";
