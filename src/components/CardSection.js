@@ -21,7 +21,21 @@ const StyledLink = styled(Link)`
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
 `;
 
-const CardSection = ({ title, mediaType, info, category, preview }) => {
+const StyledTitle = styled.h2`
+  display: flex;
+  color: ${(props) => props.theme.colors.primary};
+  line-height: 20px;
+  padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
+`;
+
+const CardSection = ({
+  title,
+  mediaType,
+  info,
+  category,
+  preview,
+  isSearch,
+}) => {
   return (
     <SectionContainer
       as="section"
@@ -29,15 +43,19 @@ const CardSection = ({ title, mediaType, info, category, preview }) => {
       justifyContent="center"
     >
       <TitleContainer>
-        <StyledLink
-          to={{
-            pathname: `/${mediaType}/${category}/page/1`,
-            state: { category: `${category}` },
-          }}
-        >
-          <h2>{title}</h2>
-          <ArrowForwardIosIcon />
-        </StyledLink>
+        {!isSearch ? (
+          <StyledLink
+            to={{
+              pathname: `/${mediaType}/${category}/page/1`,
+              state: { category: `${category}` },
+            }}
+          >
+            <h2>{title}</h2>
+            <ArrowForwardIosIcon />
+          </StyledLink>
+        ) : (
+          <StyledTitle>{title}</StyledTitle>
+        )}
       </TitleContainer>
       <CardContainer mediaType={mediaType} info={info} preview={preview} />
     </SectionContainer>

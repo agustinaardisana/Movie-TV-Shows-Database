@@ -48,6 +48,7 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
+            <Route path="/search" component={Search} />
             <Route
               path="/movie/:Category/page/:pageNumber"
               component={MoviesCategory}
@@ -63,7 +64,7 @@ const App = () => {
               component={TVShowsCategory}
             />
             <Route path="/:mediaType/:id" component={InfoContainer} />
-            <Route path="/search" component={Search} />
+
             <Route component={Page404} />
           </Switch>
 

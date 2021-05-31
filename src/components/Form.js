@@ -37,14 +37,22 @@ const Form = () => {
   let history = useHistory();
 
   const [openInput, setOpenInput] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
 
   const handleClick = () => setOpenInput(!openInput);
+
+  const handleChange = (e) => setSearchValue(e.target.value);
 
   const handleSubmit = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      // handleSearch(e.target.value);
-      history.push("/search");
+      console.log(history);
+      history.push({
+        pathname: `/search/multi/${searchValue}/page/1`,
+        search: `${searchValue}`,
+      });
+      setOpenInput(false);
+      setSearchValue("");
     }
   };
 
@@ -67,6 +75,7 @@ const Form = () => {
               placeholder="Títulos, personas, géneros..."
               aria-labelledby="title__search"
               onKeyDown={handleSubmit}
+              onChange={handleChange}
             />
           </>
         ) : (
