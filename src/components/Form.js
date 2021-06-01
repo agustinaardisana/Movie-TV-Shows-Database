@@ -46,7 +46,6 @@ const Form = () => {
   const handleSubmit = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      console.log(history);
       history.push({
         pathname: `/search/multi/${searchValue}/page/1`,
         search: `${searchValue}`,

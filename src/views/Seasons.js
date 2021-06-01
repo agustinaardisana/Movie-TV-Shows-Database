@@ -24,7 +24,6 @@ const Seasons = ({ seasons }) => {
     setSeasonNumber(e.target.value);
     // history.push(`/tv/${id}/seasons/${seasonNumber}`);
   };
-  console.log(seasonNumber);
 
   return (
     <StyledSection as="section" flexDirection="column" justifyContent="center">

@@ -45,7 +45,6 @@ const StyledLink = styled(Link)`
 `;
 
 const Info = ({ info, mediaType, externalIds }) => {
-  console.log(info);
   return (
     <>
       <FlexSection as="section">

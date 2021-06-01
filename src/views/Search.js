@@ -14,7 +14,6 @@ const Search = () => {
   const isSearch = searchedValue && true;
   const optionalQuery = `&query=${searchedValue}&page=1`;
   const info = useFetch("multi", "search", "", optionalQuery);
-  console.log(info);
 
   return (
     <SearchContainer>

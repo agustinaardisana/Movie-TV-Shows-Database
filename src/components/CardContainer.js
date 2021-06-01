@@ -40,7 +40,7 @@ const CardContainer = ({ mediaType, info, preview, isCast }) => {
                 <Card
                   item={item}
                   key={item.id}
-                  mediaType={mediaType}
+                  mediaType={item.media_type || mediaType}
                   isCast={isCast}
                 />
               );
