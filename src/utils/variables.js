@@ -50,5 +50,5 @@ export const showPreview = (pathName) => {
 
 export const notAvailable = "Información no disponible";
 
-export const imgNotAvailable =
-  "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available.jpg";
+// export const imgNotAvailable =
+//   "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available.jpg";

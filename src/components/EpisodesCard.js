@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import imgNotAvailable from "../assets/picture_not_available.svg";
 
 const StyledArticle = styled.article`
   width: calc(23%);
@@ -8,6 +9,7 @@ const StyledArticle = styled.article`
 const StyledImg = styled.img`
   width: ${(props) => props.theme.width.full};
   height: auto;
+  max-height: 187px;
   margin-bottom: ${(props) => props.theme.spacing.xs};
   border-radius: ${(props) => props.theme.radius.regular};
 `;
@@ -30,7 +32,11 @@ const EpisodesCard = ({ info }) => {
   return (
     <StyledArticle>
       <StyledImg
-        src={`https://image.tmdb.org/t/p/original/${info.still_path}`}
+        src={
+          info.still_path
+            ? `https://image.tmdb.org/t/p/original/${info.still_path}`
+            : imgNotAvailable
+        }
         alt={info.name}
       />
       <StyledTitle>

@@ -19,6 +19,7 @@ const Seasons = ({ seasons }) => {
   const history = useHistory();
   const info = useFetch(id, mediaType, `season/${seasonNumber}`);
   const episodes = info && info.episodes;
+  console.log(info);
 
   const changeSeasonNumberValue = (e) => {
     setSeasonNumber(e.target.value);

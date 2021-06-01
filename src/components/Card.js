@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import { FlexCenter } from "./Commons";
 import { Link } from "react-router-dom";
-import { imgNotAvailable } from "../utils/variables";
+// import { imgNotAvailable } from "../utils/variables";
+import imgNotAvailable from "../assets/picture_not_available.svg";
 
 const TitleContainer = styled(FlexCenter)`
   color: ${(props) => props.theme.colors.text};
@@ -112,8 +113,9 @@ const Card = ({ item, mediaType, isCast }) => {
           <ImgContainer>
             <Img
               src={
-                `https://image.tmdb.org/t/p/original/${item.poster_path}` ||
-                imgNotAvailable
+                item.poster_path
+                  ? `https://image.tmdb.org/t/p/original/${item.poster_path}`
+                  : imgNotAvailable
               }
               alt={item.title || item.name}
             />
