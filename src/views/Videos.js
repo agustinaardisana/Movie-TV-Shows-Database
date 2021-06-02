@@ -32,7 +32,7 @@ const Videos = () => {
   const location = useLocation();
   const mediaType = location.state.mediaType;
   const id = location.state.id;
-  const info = useFetch(id, mediaType, "videos");
+  const { info } = useFetch(id, mediaType, "videos");
 
   const createSource = (site) => {
     let link = "";

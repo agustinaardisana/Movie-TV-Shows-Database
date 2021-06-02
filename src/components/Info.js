@@ -1,10 +1,10 @@
-import { Flex, StyledImg } from "../components/Commons";
+import { Flex, StyledImg } from "./Commons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import Rating from "../components/Rating";
-import ExternalLinks from "../components/ExternalLinks";
+import Rating from "./Rating";
+import ExternalLinks from "./ExternalLinks";
 import { notAvailable } from "../utils/variables";
-import { imgNotAvailable } from "../utils/variables";
+import imgNotAvailable from "../assets/picture_not_available.svg";
 
 const FlexSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};

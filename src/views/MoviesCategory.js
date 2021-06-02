@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
 import { generateTitle } from "../utils/variables";
+import BasicPagination from "../components/BasicPagination";
 
 const MoviesCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
@@ -13,8 +14,9 @@ const MoviesCategory = () => {
   let location = useLocation();
   const mediaType = "movie";
   const category = location.state.category;
-  const info = useFetch(category, mediaType);
+  const { info, totalPages } = useFetch(category, mediaType);
   const title = generateTitle(mediaType, category);
+  console.log(totalPages);
 
   return (
     <MoviesCategoryContainer>
@@ -23,6 +25,7 @@ const MoviesCategory = () => {
         mediaType={mediaType}
         info={info}
       ></CardSection>
+      <BasicPagination totalPages={totalPages} />
     </MoviesCategoryContainer>
   );
 };

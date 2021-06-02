@@ -28,14 +28,16 @@ const CardContainer = ({ mediaType, info, preview, isCast }) => {
     <>
       <StyledCardContainer justifyContent="center" flexWrap="wrap">
         {preview
-          ? info.map((item, i) => {
+          ? info &&
+            info.map((item, i) => {
               return (
                 i < index && (
                   <Card item={item} key={item.id} mediaType={mediaType} />
                 )
               );
             })
-          : info.map((item) => {
+          : info &&
+            info.map((item) => {
               return (
                 <Card
                   item={item}

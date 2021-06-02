@@ -24,7 +24,7 @@ const Genre = () => {
   const genreId = location.state.genreId;
   const genreName = location.state.genreName;
   const optionalQuery = `&page=1&with_genres=${genreId}`;
-  const info = useFetch("", mediaType, "", optionalQuery);
+  const { info } = useFetch("", mediaType, "", optionalQuery);
 
   return (
     <MainContainer>

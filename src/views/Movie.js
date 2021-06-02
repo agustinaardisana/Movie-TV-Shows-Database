@@ -11,12 +11,13 @@ const MoviesContainer = styled.main`
 
 const Movie = () => {
   const mediaType = "movie";
-  const infoPopular = useFetch("popular", mediaType);
-  const infoTopRated = useFetch("top_rated", mediaType);
-  const infoUpcoming = useFetch("upcoming", mediaType);
-  const infoNowPlaying = useFetch("now_playing", mediaType);
+  const { info: infoPopular } = useFetch("popular", mediaType);
+  const { info: infoTopRated } = useFetch("top_rated", mediaType);
+  const { info: infoUpcoming } = useFetch("upcoming", mediaType);
+  const { info: infoNowPlaying } = useFetch("now_playing", mediaType);
   let location = useLocation();
   const isPreview = showPreview(location.pathname);
+  console.log(infoPopular);
 
   return (
     <MoviesContainer>

@@ -17,7 +17,7 @@ const Seasons = ({ seasons }) => {
   const id = location.state.id;
   const [seasonNumber, setSeasonNumber] = useState(1);
   const history = useHistory();
-  const info = useFetch(id, mediaType, `season/${seasonNumber}`);
+  const { info } = useFetch(id, mediaType, `season/${seasonNumber}`);
   const episodes = info && info.episodes;
   console.log(info);
 

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
 import { generateTitle } from "../utils/variables";
+import BasicPagination from "../components/BasicPagination";
 
 const TVShowsCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
@@ -13,7 +14,7 @@ const TVShowsCategory = () => {
   let location = useLocation();
   const mediaType = "tv";
   const category = location.state.category;
-  const info = useFetch(category, mediaType);
+  const { info, totalPages } = useFetch(category, mediaType);
   const title = generateTitle(mediaType, category);
 
   return (
@@ -23,6 +24,7 @@ const TVShowsCategory = () => {
         mediaType={mediaType}
         info={info}
       ></CardSection>
+      <BasicPagination totalPages={totalPages} />
     </TVShowsCategoryContainer>
   );
 };
