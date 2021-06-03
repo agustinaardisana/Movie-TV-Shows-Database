@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 
 const SearchContainer = styled.main`
-  padding: ${(props) => props.theme.spacing.md};
-  width: ${(props) => props.theme.width.full};
+  padding: ${(props) => props.theme.spacing.md}
+    ${(props) => props.theme.spacing.sm};
 `;
 
 const Search = () => {

@@ -5,8 +5,8 @@ import CardSection from "../components/CardSection";
 import { showPreview } from "../utils/variables";
 
 const HomeContainer = styled.main`
-  padding: ${(props) => props.theme.spacing.md};
-  width: ${(props) => props.theme.width.full};
+  padding: ${(props) => props.theme.spacing.md}
+    ${(props) => props.theme.spacing.sm};
 `;
 
 const Home = () => {

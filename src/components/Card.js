@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import { FlexCenter } from "./Commons";
 import { Link } from "react-router-dom";
-// import { imgNotAvailable } from "../utils/variables";
 import imgNotAvailable from "../assets/picture_not_available.svg";
 
 const TitleContainer = styled(FlexCenter)`
@@ -28,7 +27,7 @@ const TitleContainer = styled(FlexCenter)`
 const StyledCard = styled.article`
   width: calc(19%);
   margin: ${(props) => props.theme.spacing.sm}
-    ${(props) => props.theme.spacing.xs};
+    ${(props) => props.theme.spacing.xxs};
   position: ${(props) => props.theme.position.parent};
   overflow: hidden;
   transition: all 0.3s ease 0s;
@@ -63,15 +62,13 @@ const StyledCard = styled.article`
   }
 `;
 const ImgContainer = styled.div`
-  height: 394px;
+  /* height: 394px; */
 `;
 
 const Img = styled.img`
   width: ${(props) => props.theme.width.full};
-  height: 100%;
+  height: auto;
   border-radius: ${(props) => props.theme.radius.regular};
-  object-fit: cover;
-  object-position: center;
 `;
 
 const CardTitle = styled.h2`
@@ -114,7 +111,7 @@ const Card = ({ item, mediaType, isCast }) => {
             <Img
               src={
                 item.poster_path
-                  ? `https://image.tmdb.org/t/p/original/${item.poster_path}`
+                  ? `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${item.poster_path}`
                   : imgNotAvailable
               }
               alt={item.title || item.name}

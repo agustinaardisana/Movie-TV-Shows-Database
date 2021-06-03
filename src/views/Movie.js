@@ -5,8 +5,8 @@ import { showPreview } from "../utils/variables";
 import { useLocation } from "react-router-dom";
 
 const MoviesContainer = styled.main`
-  padding: ${(props) => props.theme.spacing.md};
-  width: ${(props) => props.theme.width.full};
+  padding: ${(props) => props.theme.spacing.md}
+    ${(props) => props.theme.spacing.sm};
 `;
 
 const Movie = () => {

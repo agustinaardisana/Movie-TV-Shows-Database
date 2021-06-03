@@ -5,8 +5,8 @@ import useFetch from "../utils/hooks/useFetch";
 import { generateTitle } from "../utils/variables";
 
 const TVShowsCategoryContainer = styled.main`
-  padding: ${(props) => props.theme.spacing.md};
-  width: ${(props) => props.theme.width.full};
+  padding: ${(props) => props.theme.spacing.md}
+    ${(props) => props.theme.spacing.sm};
 `;
 
 const TVShowsCategory = () => {
