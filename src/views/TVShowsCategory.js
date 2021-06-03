@@ -4,6 +4,7 @@ import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
 import { generateTitle } from "../utils/variables";
 import BasicPagination from "../components/BasicPagination";
+import { useState } from "react";
 
 const TVShowsCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
@@ -14,8 +15,20 @@ const TVShowsCategory = () => {
   let location = useLocation();
   const mediaType = "tv";
   const category = location.state.category;
-  const { info, totalPages } = useFetch(category, mediaType);
   const title = generateTitle(mediaType, category);
+  const [pageNumber, setPageNumber] = useState(1);
+  const { info, totalPages } = useFetch(
+    category,
+    mediaType,
+    "",
+    `&page=${pageNumber}`
+  );
+
+  const changePageNumber = (number) => {
+    setPageNumber(number);
+    // history.push(`/${mediaType}/${category}/page/${number}`);
+    console.log(category);
+  };
 
   return (
     <TVShowsCategoryContainer>
@@ -24,7 +37,11 @@ const TVShowsCategory = () => {
         mediaType={mediaType}
         info={info}
       ></CardSection>
-      <BasicPagination totalPages={totalPages} />
+      <BasicPagination
+        totalPages={totalPages}
+        changePageNumber={changePageNumber}
+        pageNumber={pageNumber}
+      />
     </TVShowsCategoryContainer>
   );
 };

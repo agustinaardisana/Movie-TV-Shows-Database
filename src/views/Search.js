@@ -3,6 +3,7 @@ import CardSection from "../components/CardSection";
 import { useHistory } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 import BasicPagination from "../components/BasicPagination";
+import { useState } from "react";
 
 const SearchContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
@@ -13,8 +14,14 @@ const Search = () => {
   const history = useHistory();
   const searchedValue = history.location.search.slice(1);
   const isSearch = searchedValue && true;
-  const optionalQuery = `&query=${searchedValue}&page=1`;
+  const [pageNumber, setPageNumber] = useState(1);
+  const optionalQuery = `&query=${searchedValue}&page=${pageNumber}`;
   const { info, totalPages } = useFetch("multi", "search", "", optionalQuery);
+
+  const changePageNumber = (number) => {
+    setPageNumber(number);
+    // history.push(`/${mediaType}/${category}/page/${number}`);
+  };
 
   return (
     <SearchContainer>
@@ -23,7 +30,11 @@ const Search = () => {
         isSearch={isSearch}
         info={info}
       ></CardSection>
-      <BasicPagination totalPages={totalPages} />
+      <BasicPagination
+        totalPages={totalPages}
+        changePageNumber={changePageNumber}
+        pageNumber={pageNumber}
+      />
     </SearchContainer>
   );
 };

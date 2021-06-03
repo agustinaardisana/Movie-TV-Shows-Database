@@ -17,7 +17,6 @@ const Movie = () => {
   const { info: infoNowPlaying } = useFetch("now_playing", mediaType);
   let location = useLocation();
   const isPreview = showPreview(location.pathname);
-  console.log(infoPopular);
 
   return (
     <MoviesContainer>

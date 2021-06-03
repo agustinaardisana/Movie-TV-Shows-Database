@@ -3,6 +3,7 @@ import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
 import CardContainer from "../components/CardContainer";
 import BasicPagination from "../components/BasicPagination";
+import { useState } from "react";
 
 const StyledSection = styled.section`
   padding: ${(props) => props.theme.spacing.lg}
@@ -14,12 +15,28 @@ const Similar = () => {
   const location = useLocation();
   const mediaType = location.state.mediaType;
   const id = location.state.id;
-  const { info, totalPages } = useFetch(id, mediaType, "similar");
+  const [pageNumber, setPageNumber] = useState(1);
+  const optionalQuery = `&page=${pageNumber}`;
+  const { info, totalPages } = useFetch(
+    id,
+    mediaType,
+    "similar",
+    optionalQuery
+  );
+
+  const changePageNumber = (number) => {
+    setPageNumber(number);
+    // history.push(`/${mediaType}/${category}/page/${number}`);
+  };
 
   return (
     <StyledSection>
       {info && <CardContainer mediaType={mediaType} info={info} />}
-      <BasicPagination totalPages={totalPages} />
+      <BasicPagination
+        totalPages={totalPages}
+        changePageNumber={changePageNumber}
+        pageNumber={pageNumber}
+      />
     </StyledSection>
   );
 };
