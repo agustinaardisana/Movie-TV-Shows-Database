@@ -18,8 +18,8 @@ const Search = () => {
   const optionalQuery = `&query=${searchedValue}&page=${pageNumber}`;
   const { info, totalPages } = useFetch("multi", "search", "", optionalQuery);
 
-  const changePageNumber = (number) => {
-    setPageNumber(number);
+  const changePageNumber = (e, value) => {
+    setPageNumber(value);
     // history.push(`/${mediaType}/${category}/page/${number}`);
   };
 

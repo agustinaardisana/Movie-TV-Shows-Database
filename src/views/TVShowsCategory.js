@@ -24,10 +24,9 @@ const TVShowsCategory = () => {
     `&page=${pageNumber}`
   );
 
-  const changePageNumber = (number) => {
-    setPageNumber(number);
+  const changePageNumber = (e, value) => {
+    setPageNumber(value);
     // history.push(`/${mediaType}/${category}/page/${number}`);
-    console.log(category);
   };
 
   return (

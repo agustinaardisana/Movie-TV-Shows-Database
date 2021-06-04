@@ -22,9 +22,9 @@ const useStyles = makeStyles((theme) => ({
 const BasicPagination = ({ totalPages, pageNumber, changePageNumber }) => {
   console.log(totalPages);
   const classes = useStyles();
-  const handleChange = (e) => {
-    e.target.localName === "button" &&
-      changePageNumber(parseInt(e.target.innerText));
+
+  const handleChange = (e, value) => {
+    changePageNumber(e, value);
   };
 
   return (

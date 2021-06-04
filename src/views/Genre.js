@@ -29,8 +29,8 @@ const Genre = () => {
   const optionalQuery = `&with_genres=${genreId}&page=${pageNumber}`;
   const { info, totalPages } = useFetch("", mediaType, "", optionalQuery);
 
-  const changePageNumber = (number) => {
-    setPageNumber(number);
+  const changePageNumber = (e, value) => {
+    setPageNumber(value);
     // history.push(`/${mediaType}/${category}/page/${number}`);
   };
 

@@ -24,8 +24,8 @@ const Similar = () => {
     optionalQuery
   );
 
-  const changePageNumber = (number) => {
-    setPageNumber(number);
+  const changePageNumber = (e, value) => {
+    setPageNumber(value);
     // history.push(`/${mediaType}/${category}/page/${number}`);
   };
 
