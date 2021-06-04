@@ -4,7 +4,6 @@ import styled from "styled-components";
 import SeasonsCardsContainer from "../components/SeasonsCardsContainer";
 import SeasonsSelect from "../components/SeasonsSelect";
 import { Flex } from "../components/Commons";
-import { useState } from "react";
 
 const StyledSection = styled(Flex)`
   padding: ${(props) => props.theme.spacing.md};

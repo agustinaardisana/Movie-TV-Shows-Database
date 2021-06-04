@@ -14,8 +14,6 @@ const StyledSelect = styled.select`
 `;
 
 const SeasonsSelect = ({ seasons, changeSeasonNumberValue, seasonNumber }) => {
-  // const handleChange = (e) => changeSeasonNumberValue(e);
-
   return (
     <StyledSelect
       onChange={(e) => changeSeasonNumberValue(e)}

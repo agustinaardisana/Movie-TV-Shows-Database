@@ -41,7 +41,3 @@ export const StyledUl = styled.ul`
 export const StyledLi = styled.li`
   padding: 0 ${(props) => props.theme.spacing.sm};
 `;
-// lists
-// list items
-//titles
-//texts

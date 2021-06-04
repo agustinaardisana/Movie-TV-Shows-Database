@@ -1,9 +1,10 @@
-import { Nav, StyledUl, StyledLi } from "./Commons";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
+//
+import { Nav, StyledUl, StyledLi } from "./Commons";
 
 const StyledNav = styled(Nav)`
-  /* justify-content: space-around; */
+  /*  */
 `;
 
 const StyledLink = styled(NavLink)`

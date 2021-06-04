@@ -1,8 +1,10 @@
+import styled from "styled-components";
+//
 import StarIcon from "@material-ui/icons/Star";
 import StarBorderIcon from "@material-ui/icons/StarBorder";
 import StarHalfIcon from "@material-ui/icons/StarHalf";
+//
 import { Flex } from "./Commons";
-import styled from "styled-components";
 
 const FlexContainer = styled(Flex)`
   margin-bottom: ${(props) => props.theme.spacing.md};

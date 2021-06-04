@@ -1,12 +1,13 @@
+import styled from "styled-components";
+//
 import LinkIcon from "@material-ui/icons/Link";
 import FacebookIcon from "@material-ui/icons/Facebook";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImdb } from "@fortawesome/free-brands-svg-icons";
-
+//
 import { Flex } from "./Commons";
-import styled from "styled-components";
 
 const FlexContainer = styled(Flex)`
   padding-top: ${(props) => props.theme.spacing.sm};
@@ -19,50 +20,42 @@ const StyledLink = styled.a`
 `;
 
 const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
-  const { imdb_id, facebook_id, twitter_id, instagram_id } = externalIds;
+  console.log(externalIds.info.imdb_id);
   const imdbLink =
     mediaType !== "person"
-      ? `https://www.imdb.com/title/${imdb_id}`
-      : `https://www.imdb.com/name/${imdb_id}`;
-
-  //   const externalURLs = {
-  //     imdb_id: "https://www.imdb.com/title/",
-  //     facebook_id: "https://www.facebook.com/",
-  //     twitter_id: "https://twitter.com/",
-  //     instagram_id: "https://www.instagram.com/",
-  //   };
-
-  //   const createExternalURL = (key, value) => {
-  //     return externalURLs[key] + value;
-  //   };
+      ? `https://www.imdb.com/title/${externalIds.info.imdb_id}`
+      : `https://www.imdb.com/name/${externalIds.info.imdb_id}`;
 
   return (
     <FlexContainer>
-      {imdb_id && (
+      {externalIds.info.imdb_id && (
         <StyledLink target="_blank" href={imdbLink}>
           {/* <LinkIcon fontSize="large" /> */}
           <FontAwesomeIcon icon={faImdb} />
         </StyledLink>
       )}
-      {facebook_id && (
+      {externalIds.info.facebook_id && (
         <StyledLink
           target="_blank"
-          href={`https://www.facebook.com/${facebook_id}`}
+          href={`https://www.facebook.com/${externalIds.info.facebook_id}`}
         >
           {" "}
           <FacebookIcon fontSize="large" />
         </StyledLink>
       )}
-      {instagram_id && (
+      {externalIds.info.instagram_id && (
         <StyledLink
           target="_blank"
-          href={`https://www.instagram.com/${instagram_id}`}
+          href={`https://www.instagram.com/${externalIds.info.instagram_id}`}
         >
           <InstagramIcon fontSize="large" />
         </StyledLink>
       )}
-      {twitter_id && (
-        <StyledLink target="_blank" href={`https://twitter.com/${twitter_id}`}>
+      {externalIds.info.twitter_id && (
+        <StyledLink
+          target="_blank"
+          href={`https://twitter.com/${externalIds.info.twitter_id}`}
+        >
           <TwitterIcon fontSize="large" />
         </StyledLink>
       )}

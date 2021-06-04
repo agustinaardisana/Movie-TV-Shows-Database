@@ -1,8 +1,10 @@
 import styled from "styled-components";
-import SearchIcon from "@material-ui/icons/Search";
 import { useState } from "react";
-import { AlignedButton } from "./Commons";
 import { useHistory } from "react-router-dom";
+//
+import SearchIcon from "@material-ui/icons/Search";
+//
+import { AlignedButton } from "./Commons";
 
 const StyledForm = styled.form`
   width: 250px;
@@ -39,10 +41,6 @@ const Form = () => {
   const [openInput, setOpenInput] = useState(false);
   const [searchValue, setSearchValue] = useState("");
 
-  const handleClick = () => setOpenInput(!openInput);
-
-  const handleChange = (e) => setSearchValue(e.target.value);
-
   const handleSubmit = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
@@ -59,7 +57,7 @@ const Form = () => {
           <>
             <SearchButton
               type="button"
-              onClick={handleClick}
+              onClick={() => setOpenInput(!openInput)}
               top="-7px"
               transform="translateX(200px)"
             >
@@ -71,13 +69,13 @@ const Form = () => {
               placeholder="Títulos, personas, géneros..."
               aria-labelledby="title__search"
               onKeyDown={handleSubmit}
-              onChange={handleChange}
+              onChange={(e) => setSearchValue(e.target.value)}
             />
           </>
         ) : (
           <SearchButton
             type="button"
-            onClick={handleClick}
+            onClick={() => setOpenInput(!openInput)}
             top="1px"
             left="8px"
           >

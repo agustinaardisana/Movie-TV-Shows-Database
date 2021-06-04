@@ -1,15 +1,16 @@
-import { Flex, StyledImg } from "./Commons";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+//
+import { notAvailable } from "../utils/variables";
+import { Flex, StyledImg } from "./Commons";
 import Rating from "./Rating";
 import ExternalLinks from "./ExternalLinks";
-import { notAvailable } from "../utils/variables";
-import imgNotAvailable from "../assets/picture_not_available.svg";
+//
+import imgNotAvailable from "../assets/picture_not_available.png";
 
 const FlexSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.md};
-  /* min-height: 80vh; */
 `;
 
 const Img = styled(StyledImg)`
@@ -31,7 +32,6 @@ const Title = styled.h2`
 const Text = styled.p`
   margin-bottom: ${(props) => props.theme.spacing.sm};
   font-size: ${(props) => props.theme.fonts.sizes.p};
-  /* line-height: 25px; */
 `;
 
 const StyledLink = styled(Link)`

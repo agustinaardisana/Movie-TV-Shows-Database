@@ -1,7 +1,9 @@
-import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { Flex } from "./Commons";
+import styled from "styled-components";
+//
 import ArrowForwardIosIcon from "@material-ui/icons/ArrowForwardIos";
+//
+import { Flex } from "./Commons";
 import CardContainer from "./CardContainer";
 
 const SectionContainer = styled(Flex)`
@@ -14,11 +16,19 @@ const TitleContainer = styled(Flex)`
   margin-bottom: ${(props) => props.theme.spacing.md};
 `;
 
+const StyledSpan = styled.span`
+  transition: all 0.3s ease 0s;
+`;
+
 const StyledLink = styled(Link)`
   display: flex;
   color: ${(props) => props.theme.colors.primary};
   line-height: 20px;
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
+
+  &:hover ${StyledSpan} {
+    transform: scale(1.1) translateX(10px);
+  }
 `;
 
 const StyledTitle = styled.h2`
@@ -44,14 +54,11 @@ const CardSection = ({
     >
       <TitleContainer>
         {!isSearch ? (
-          <StyledLink
-            to={{
-              pathname: `/${mediaType}/${category}/page/1`,
-              state: { category: `${category}` },
-            }}
-          >
-            <h2>{title}</h2>
-            <ArrowForwardIosIcon />
+          <StyledLink to={`/${mediaType}/${category}/page/1`}>
+            <StyledTitle>{title}</StyledTitle>
+            <StyledSpan>
+              <ArrowForwardIosIcon />
+            </StyledSpan>
           </StyledLink>
         ) : (
           <StyledTitle>{title}</StyledTitle>

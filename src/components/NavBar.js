@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-import { Nav, StyledUl, StyledLi } from "./Commons";
-
+//
 import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import TheatersRoundedIcon from "@material-ui/icons/TheatersRounded";
 import LiveTvRoundedIcon from "@material-ui/icons/LiveTvRounded";
+//
+import { Nav, StyledUl, StyledLi } from "./Commons";
 import Form from "./Form";
 
 const StyledNav = styled(Nav)`
@@ -22,7 +23,6 @@ const List = styled(StyledUl)`
     justify-content: space-around;
     z-index: 3;
     padding: ${(props) => props.theme.spacing.md};
-    /* opacity: 0.9; */
     border-radius: 5px;
   }
 `;
@@ -35,11 +35,6 @@ const StyledLink = styled(NavLink)`
   &.selected {
     opacity: 1;
   }
-  /* & > svg {
-    @media (max-width: ${(props) => props.theme.breakpoints.small}) {
-      font-size: 28px;
-    }
-  } */
 `;
 
 const NavBar = () => {

@@ -1,10 +1,11 @@
-import styled from "styled-components";
-import { FlexCenter } from "./Commons";
 import { Link } from "react-router-dom";
+import styled from "styled-components";
+//
+import { FlexCenter } from "./Commons";
+//
 import imgNotAvailable from "../assets/picture_not_available.png";
 
 const TitleContainer = styled(FlexCenter)`
-  color: ${(props) => props.theme.colors.text};
   text-align: center;
   background: linear-gradient(
     transparent,
@@ -40,8 +41,6 @@ const StyledCard = styled.article`
 
   &:hover ${TitleContainer} {
     transform: translateY(0) translateX(-50%);
-    /* Elegir una de las dos transiciones siguientes */
-    /* transition-delay: 0.75s; */
     transition: transform 0.35s;
     opacity: 1;
   }
@@ -61,9 +60,6 @@ const StyledCard = styled.article`
     width: 90%;
   }
 `;
-const ImgContainer = styled.div`
-  /* height: 394px; */
-`;
 
 const Img = styled.img`
   width: ${(props) => props.theme.width.full};
@@ -72,7 +68,7 @@ const Img = styled.img`
 `;
 
 const CardTitle = styled.h2`
-  /* style */
+  color: ${(props) => props.theme.colors.text};
 `;
 
 const Card = ({ item, mediaType, isCast }) => {
@@ -85,16 +81,14 @@ const Card = ({ item, mediaType, isCast }) => {
             state: { id: `${item.id}` },
           }}
         >
-          <ImgContainer>
-            <Img
-              src={
-                item.profile_path
-                  ? `https://image.tmdb.org/t/p/w342/${item.profile_path}`
-                  : imgNotAvailable
-              }
-              alt={item.name}
-            />
-          </ImgContainer>
+          <Img
+            src={
+              item.profile_path
+                ? `https://image.tmdb.org/t/p/w342/${item.profile_path}`
+                : imgNotAvailable
+            }
+            alt={item.name}
+          />
           <TitleContainer>
             <CardTitle>{item.title || item.name}</CardTitle>
           </TitleContainer>
@@ -107,16 +101,14 @@ const Card = ({ item, mediaType, isCast }) => {
             state: { id: `${item.id}` },
           }}
         >
-          <ImgContainer>
-            <Img
-              src={
-                item.poster_path
-                  ? `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${item.poster_path}`
-                  : imgNotAvailable
-              }
-              alt={item.title || item.name}
-            />
-          </ImgContainer>
+          <Img
+            src={
+              item.poster_path
+                ? `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${item.poster_path}`
+                : imgNotAvailable
+            }
+            alt={item.title || item.name}
+          />
           <TitleContainer>
             <CardTitle>{item.title || item.name}</CardTitle>
           </TitleContainer>

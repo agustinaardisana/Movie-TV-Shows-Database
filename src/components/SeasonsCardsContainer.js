@@ -1,6 +1,7 @@
-import EpisodesCard from "./EpisodesCard";
 import styled from "styled-components";
+//
 import { Flex } from "./Commons";
+import EpisodesCard from "./EpisodesCard";
 
 const FlexContainer = styled(Flex)`
   /* style */
