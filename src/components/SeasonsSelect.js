@@ -14,10 +14,13 @@ const StyledSelect = styled.select`
 `;
 
 const SeasonsSelect = ({ seasons, changeSeasonNumberValue, seasonNumber }) => {
-  const handleChange = (e) => changeSeasonNumberValue(e);
+  // const handleChange = (e) => changeSeasonNumberValue(e);
 
   return (
-    <StyledSelect onChange={handleChange} value={seasonNumber}>
+    <StyledSelect
+      onChange={(e) => changeSeasonNumberValue(e)}
+      value={seasonNumber}
+    >
       {seasons &&
         seasons
           .filter(

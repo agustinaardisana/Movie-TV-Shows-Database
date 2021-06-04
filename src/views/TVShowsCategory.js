@@ -1,8 +1,10 @@
-import { useLocation } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
 import { generateTitle } from "../utils/variables";
+import BasicPagination from "../components/BasicPagination";
+import { useState } from "react";
 
 const TVShowsCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md}
@@ -10,11 +12,23 @@ const TVShowsCategoryContainer = styled.main`
 `;
 
 const TVShowsCategory = () => {
-  let location = useLocation();
+  let params = useParams();
+  let history = useHistory();
   const mediaType = "tv";
-  const category = location.state.category;
-  const info = useFetch(category, mediaType);
+  const category = params.category;
   const title = generateTitle(mediaType, category);
+  const [pageNumber, setPageNumber] = useState(1);
+  const { info, totalPages } = useFetch(
+    category,
+    mediaType,
+    "",
+    `&page=${pageNumber}`
+  );
+
+  const changePageNumber = (e, value) => {
+    setPageNumber(value);
+    history.push(`/${mediaType}/${category}/page/${value}`);
+  };
 
   return (
     <TVShowsCategoryContainer>
@@ -23,6 +37,11 @@ const TVShowsCategory = () => {
         mediaType={mediaType}
         info={info}
       ></CardSection>
+      <BasicPagination
+        totalPages={totalPages}
+        changePageNumber={changePageNumber}
+        pageNumber={pageNumber}
+      />
     </TVShowsCategoryContainer>
   );
 };

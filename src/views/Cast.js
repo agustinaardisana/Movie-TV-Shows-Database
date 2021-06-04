@@ -13,7 +13,7 @@ const Cast = () => {
   const location = useLocation();
   const mediaType = location.state.mediaType;
   const id = location.state.id;
-  const info = useFetch(id, mediaType, "credits");
+  const { info } = useFetch(id, mediaType, "credits");
   const cast = info && info.cast;
 
   return (

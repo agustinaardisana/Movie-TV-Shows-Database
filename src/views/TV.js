@@ -11,9 +11,9 @@ const TVContainer = styled.main`
 
 const TV = () => {
   const mediaType = "tv";
-  const infoPopular = useFetch("popular", mediaType);
-  const infoTopRated = useFetch("top_rated", mediaType);
-  const infoOnTheAir = useFetch("on_the_air", mediaType);
+  const { info: infoPopular } = useFetch("popular", mediaType);
+  const { info: infoTopRated } = useFetch("top_rated", mediaType);
+  const { info: infoOnTheAir } = useFetch("on_the_air", mediaType);
   let location = useLocation();
   const isPreview = showPreview(location.pathname);
 

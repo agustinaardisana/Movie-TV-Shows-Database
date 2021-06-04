@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
 import CardContainer from "../components/CardContainer";
@@ -9,11 +8,8 @@ const StyledSection = styled.section`
   background-color: ${(props) => props.theme.colors.primary};
 `;
 
-const Similar = () => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const id = location.state.id;
-  const info = useFetch(id, mediaType, "similar");
+const Similar = ({ mediaType, id }) => {
+  const { info } = useFetch(id, mediaType, "similar");
 
   return (
     <StyledSection>

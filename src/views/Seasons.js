@@ -1,4 +1,4 @@
-import { useLocation, useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
 import SeasonsCardsContainer from "../components/SeasonsCardsContainer";
@@ -11,19 +11,16 @@ const StyledSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};
 `;
 
-const Seasons = ({ seasons }) => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const id = location.state.id;
-  const [seasonNumber, setSeasonNumber] = useState(1);
+const Seasons = ({ seasons, id }) => {
+  const params = useParams();
   const history = useHistory();
-  const info = useFetch(id, mediaType, `season/${seasonNumber}`);
+  const mediaType = "tv";
+  const seasonNumber = params.seasonNumber;
+  const { info } = useFetch(id, mediaType, `season/${seasonNumber}`);
   const episodes = info && info.episodes;
-  console.log(info);
 
   const changeSeasonNumberValue = (e) => {
-    setSeasonNumber(e.target.value);
-    // history.push(`/tv/${id}/seasons/${seasonNumber}`);
+    history.push(`/tv/${id}/seasons/${e.target.value}`);
   };
 
   return (

@@ -57,7 +57,12 @@ const CardSection = ({
           <StyledTitle>{title}</StyledTitle>
         )}
       </TitleContainer>
-      <CardContainer mediaType={mediaType} info={info} preview={preview} />
+      <CardContainer
+        mediaType={mediaType}
+        info={info}
+        preview={preview}
+        isSearch={isSearch}
+      />
     </SectionContainer>
   );
 };
