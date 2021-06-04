@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { FlexCenter } from "./Commons";
 import { Link } from "react-router-dom";
-import imgNotAvailable from "../assets/picture_not_available.svg";
+import imgNotAvailable from "../assets/picture_not_available.png";
 
 const TitleContainer = styled(FlexCenter)`
   color: ${(props) => props.theme.colors.text};
