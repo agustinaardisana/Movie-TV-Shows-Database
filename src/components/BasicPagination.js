@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const BasicPagination = ({ totalPages, pageNumber, changePageNumber }) => {
-  console.log(totalPages);
   const classes = useStyles();
 
   const handleChange = (e, value) => {

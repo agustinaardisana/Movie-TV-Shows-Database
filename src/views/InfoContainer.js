@@ -39,10 +39,14 @@ const InfoContainer = () => {
           <Route
             exact
             path={`${url}/seasons/:seasonNumber`}
-            component={() => <Seasons seasons={info.seasons} />}
+            component={() => <Seasons seasons={info.seasons} id={id} />}
           />
         )}{" "}
-        <Route exact path={`${url}/similar`} component={Similar} />
+        <Route
+          exact
+          path={`${url}/similar`}
+          component={() => <Similar mediaType={mediaType} id={id} />}
+        />
         <Route exact path={`${url}/credits`} component={Credits} />
       </Switch>
     </>

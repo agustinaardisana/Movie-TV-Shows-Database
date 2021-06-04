@@ -46,10 +46,7 @@ const Form = () => {
   const handleSubmit = (e) => {
     if (e.keyCode === 13) {
       e.preventDefault();
-      history.push({
-        pathname: `/search/multi/${searchValue}/page/1`,
-        search: `${searchValue}`,
-      });
+      history.push(`/search/multi/${searchValue}/page/1`);
       setOpenInput(false);
       setSearchValue("");
     }

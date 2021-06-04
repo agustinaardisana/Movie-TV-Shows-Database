@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import useFetch from "../utils/hooks/useFetch";
 import BasicPagination from "../components/BasicPagination";
 import { useState } from "react";
@@ -12,7 +12,8 @@ const SearchContainer = styled.main`
 
 const Search = () => {
   const history = useHistory();
-  const searchedValue = history.location.search.slice(1);
+  const params = useParams();
+  const searchedValue = params.searchedValue;
   const isSearch = searchedValue && true;
   const [pageNumber, setPageNumber] = useState(1);
   const optionalQuery = `&query=${searchedValue}&page=${pageNumber}`;
@@ -20,7 +21,7 @@ const Search = () => {
 
   const changePageNumber = (e, value) => {
     setPageNumber(value);
-    // history.push(`/${mediaType}/${category}/page/${number}`);
+    history.push(`/search/multi/${searchedValue}/page/${value}`);
   };
 
   return (

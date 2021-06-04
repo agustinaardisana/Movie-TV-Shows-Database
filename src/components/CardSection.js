@@ -36,7 +36,6 @@ const CardSection = ({
   preview,
   isSearch,
 }) => {
-  console.log(category);
   return (
     <SectionContainer
       as="section"

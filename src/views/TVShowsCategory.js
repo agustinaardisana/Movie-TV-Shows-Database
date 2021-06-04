@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import useFetch from "../utils/hooks/useFetch";
@@ -12,9 +12,10 @@ const TVShowsCategoryContainer = styled.main`
 `;
 
 const TVShowsCategory = () => {
-  let location = useLocation();
+  let params = useParams();
+  let history = useHistory();
   const mediaType = "tv";
-  const category = location.state.category;
+  const category = params.category;
   const title = generateTitle(mediaType, category);
   const [pageNumber, setPageNumber] = useState(1);
   const { info, totalPages } = useFetch(
@@ -26,7 +27,7 @@ const TVShowsCategory = () => {
 
   const changePageNumber = (e, value) => {
     setPageNumber(value);
-    // history.push(`/${mediaType}/${category}/page/${number}`);
+    history.push(`/${mediaType}/${category}/page/${value}`);
   };
 
   return (

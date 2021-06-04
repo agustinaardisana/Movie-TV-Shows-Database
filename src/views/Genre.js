@@ -1,6 +1,6 @@
 import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
-import { useLocation } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 import CardContainer from "../components/CardContainer";
 import BasicPagination from "../components/BasicPagination";
 import { useState } from "react";
@@ -21,17 +21,18 @@ const Title = styled.h2`
 `;
 
 const Genre = () => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const genreId = location.state.genreId;
-  const genreName = location.state.genreName;
+  const params = useParams();
+  const history = useHistory();
+  const mediaType = params.mediaType;
+  const genreId = params.genreId;
+  const genreName = params.genre;
   const [pageNumber, setPageNumber] = useState(1);
   const optionalQuery = `&with_genres=${genreId}&page=${pageNumber}`;
   const { info, totalPages } = useFetch("", mediaType, "", optionalQuery);
 
   const changePageNumber = (e, value) => {
     setPageNumber(value);
-    // history.push(`/${mediaType}/${category}/page/${number}`);
+    history.push(`/${mediaType}/${genreName}/${genreId}/page/${value}`);
   };
 
   return (

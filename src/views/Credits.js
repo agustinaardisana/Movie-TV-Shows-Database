@@ -12,7 +12,7 @@ const Credits = () => {
   const location = useLocation();
   const mediaType = location.state.mediaType;
   const id = location.state.id;
-  const { info, totalPages } = useFetch(id, mediaType, "combined_credits");
+  const { info } = useFetch(id, mediaType, "combined_credits");
   const credits = info && info.cast;
 
   return (
