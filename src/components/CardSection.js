@@ -32,7 +32,7 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledTitle = styled.h2`
-  display: flex;
+  /* display: flex; */
   color: ${(props) => props.theme.colors.primary};
   line-height: 20px;
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
@@ -46,6 +46,8 @@ const CardSection = ({
   preview,
   isSearch,
 }) => {
+  const isPreview = !isSearch && preview;
+
   return (
     <SectionContainer
       as="section"
@@ -53,7 +55,7 @@ const CardSection = ({
       justifyContent="center"
     >
       <TitleContainer>
-        {!isSearch ? (
+        {isPreview ? (
           <StyledLink to={`/${mediaType}/${category}/page/1`}>
             <StyledTitle>{title}</StyledTitle>
             <StyledSpan>
