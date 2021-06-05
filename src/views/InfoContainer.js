@@ -1,13 +1,14 @@
 import { useRouteMatch, Route, Switch, useParams } from "react-router-dom";
-import useFetch from "../utils/hooks/useFetch";
-import Hero from "../components/Hero";
-import MediaDetailNavBar from "../components/MediaDetailNavBar";
-import Info from "../components/Info";
-import Videos from "./Videos";
+//
 import Cast from "./Cast";
+import Credits from "./Credits";
+import Hero from "../components/Hero";
+import Info from "../components/Info";
+import MediaDetailNavBar from "../components/MediaDetailNavBar";
 import Similar from "./Similar";
 import Seasons from "./Seasons";
-import Credits from "./Credits";
+import useFetch from "../utils/hooks/useFetch";
+import Videos from "./Videos";
 
 const InfoContainer = () => {
   const { url } = useRouteMatch();

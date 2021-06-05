@@ -1,9 +1,10 @@
 import { useHistory, useParams } from "react-router-dom";
-import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
+//
+import { Flex } from "../components/Commons";
 import SeasonsCardsContainer from "../components/SeasonsCardsContainer";
 import SeasonsSelect from "../components/SeasonsSelect";
-import { Flex } from "../components/Commons";
+import useFetch from "../utils/hooks/useFetch";
 
 const StyledSection = styled(Flex)`
   padding: ${(props) => props.theme.spacing.md};

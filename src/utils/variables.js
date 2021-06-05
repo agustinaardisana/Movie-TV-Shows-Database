@@ -18,7 +18,6 @@ export const createURL = (pathName, mediaType, details, optionalQuery) => {
   const queriedList = defineQueriedList(pathName, mediaType, details);
   const optionalQueryPath = optionalQuery || "";
 
-  // console.log(baseURL + queriedList + apiKey + language + optionalQueryPath);
   return baseURL + queriedList + apiKey + language + optionalQueryPath;
 };
 
@@ -49,6 +48,3 @@ export const showPreview = (pathName) => {
 };
 
 export const notAvailable = "Información no disponible";
-
-export const imgNotAvailable =
-  "https://sainfoinc.com/wp-content/uploads/2018/02/image-not-available.jpg";

@@ -1,18 +1,18 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import { theme } from "./styles/theme";
-import "./App.scss";
-import NavBar from "./components/NavBar";
+//
 import Footer from "./components/Footer";
-import Home from "./views/Home";
-import Movie from "./views/Movie";
-import TV from "./views/TV";
-import Page404 from "./views/Page404";
-import MoviesCategory from "./views/MoviesCategory";
-import TVShowsCategory from "./views/TVShowsCategory";
-import InfoContainer from "./views/InfoContainer";
 import Genre from "./views/Genre";
+import Home from "./views/Home";
+import InfoContainer from "./views/InfoContainer";
+import Movie from "./views/Movie";
+import MoviesCategory from "./views/MoviesCategory";
+import NavBar from "./components/NavBar";
+import Page404 from "./views/Page404";
 import Search from "./views/Search";
+import TV from "./views/TV";
+import TVShowsCategory from "./views/TVShowsCategory";
+import { theme } from "./styles/theme";
 
 const GlobalStyle = createGlobalStyle`
 * {

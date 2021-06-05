@@ -1,8 +1,9 @@
-import useFetch from "../utils/hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+//
 import { Flex } from "../components/Commons";
 import { notAvailable } from "../utils/variables";
+import useFetch from "../utils/hooks/useFetch";
 
 const StyledSection = styled(Flex)`
   padding: ${(props) => props.theme.spacing.lg}

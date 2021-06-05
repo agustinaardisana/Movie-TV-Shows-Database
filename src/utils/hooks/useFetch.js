@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+//
 import { createURL } from "../variables";
 
 const useFetch = (pathName, mediaType, details, optionalQuery) => {

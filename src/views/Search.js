@@ -1,9 +1,10 @@
-import styled from "styled-components";
-import CardSection from "../components/CardSection";
-import { useHistory, useParams } from "react-router-dom";
-import useFetch from "../utils/hooks/useFetch";
-import BasicPagination from "../components/BasicPagination";
 import { useState } from "react";
+import { useHistory, useParams } from "react-router-dom";
+import styled from "styled-components";
+//
+import BasicPagination from "../components/BasicPagination";
+import CardSection from "../components/CardSection";
+import useFetch from "../utils/hooks/useFetch";
 
 const SearchContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md}

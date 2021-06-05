@@ -1,10 +1,11 @@
+import { useState } from "react";
 import { useParams, useHistory } from "react-router-dom";
 import styled from "styled-components";
+//
 import CardSection from "../components/CardSection";
-import useFetch from "../utils/hooks/useFetch";
-import { generateTitle } from "../utils/variables";
 import BasicPagination from "../components/BasicPagination";
-import { useState } from "react";
+import { generateTitle } from "../utils/variables";
+import useFetch from "../utils/hooks/useFetch";
 
 const TVShowsCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md}

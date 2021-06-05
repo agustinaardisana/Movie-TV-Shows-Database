@@ -1,7 +1,8 @@
-import useFetch from "../utils/hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+//
 import CardContainer from "../components/CardContainer";
+import useFetch from "../utils/hooks/useFetch";
 
 const StyledSection = styled.section`
   margin: ${(props) => props.theme.spacing.lg} 0;

@@ -1,17 +1,14 @@
-import useFetch from "../utils/hooks/useFetch";
-import styled from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
-import CardContainer from "../components/CardContainer";
-import BasicPagination from "../components/BasicPagination";
 import { useState } from "react";
+import styled from "styled-components";
+//
+import BasicPagination from "../components/BasicPagination";
+import CardContainer from "../components/CardContainer";
+import useFetch from "../utils/hooks/useFetch";
 
 const MainContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md};
   width: ${(props) => props.theme.width.full};
-`;
-
-const SectionContainer = styled.section`
-  /* style */
 `;
 
 const Title = styled.h2`
@@ -37,10 +34,10 @@ const Genre = () => {
 
   return (
     <MainContainer>
-      <SectionContainer>
+      <section>
         <Title>Género: {genreName}</Title>
         <CardContainer mediaType={mediaType} info={info}></CardContainer>
-      </SectionContainer>
+      </section>
       <BasicPagination
         totalPages={totalPages}
         changePageNumber={changePageNumber}

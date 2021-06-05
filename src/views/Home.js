@@ -1,8 +1,9 @@
-import useFetch from "../utils/hooks/useFetch";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+//
 import CardSection from "../components/CardSection";
 import { showPreview } from "../utils/variables";
+import useFetch from "../utils/hooks/useFetch";
 
 const HomeContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md}

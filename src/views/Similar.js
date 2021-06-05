@@ -1,6 +1,7 @@
-import useFetch from "../utils/hooks/useFetch";
 import styled from "styled-components";
+//
 import CardContainer from "../components/CardContainer";
+import useFetch from "../utils/hooks/useFetch";
 
 const StyledSection = styled.section`
   padding: ${(props) => props.theme.spacing.lg}

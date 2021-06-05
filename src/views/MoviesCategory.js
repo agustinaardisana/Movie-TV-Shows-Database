@@ -1,10 +1,11 @@
 import { useHistory, useParams } from "react-router-dom";
-import styled from "styled-components";
-import CardSection from "../components/CardSection";
-import useFetch from "../utils/hooks/useFetch";
-import { generateTitle } from "../utils/variables";
-import BasicPagination from "../components/BasicPagination";
 import { useState } from "react";
+import styled from "styled-components";
+//
+import BasicPagination from "../components/BasicPagination";
+import CardSection from "../components/CardSection";
+import { generateTitle } from "../utils/variables";
+import useFetch from "../utils/hooks/useFetch";
 
 const MoviesCategoryContainer = styled.main`
   padding: ${(props) => props.theme.spacing.md}

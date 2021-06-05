@@ -1,6 +1,8 @@
 import styled from "styled-components";
-import error404 from "../assets/404.svg";
+//
 import { FlexCenter, StyledImg } from "../components/Commons";
+//
+import error404 from "../assets/404.svg";
 
 const Container = styled(FlexCenter)`
   padding: ${(props) => props.theme.spacing.lg};

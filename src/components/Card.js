@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 //
-import { FlexCenter } from "./Commons";
+import { FlexCenter, StyledImg } from "./Commons";
 //
 import imgNotAvailable from "../assets/picture_not_available.png";
 
@@ -61,9 +61,7 @@ const StyledCard = styled.article`
   }
 `;
 
-const Img = styled.img`
-  width: ${(props) => props.theme.width.full};
-  height: auto;
+const Img = styled(StyledImg)`
   border-radius: ${(props) => props.theme.radius.regular};
 `;
 
