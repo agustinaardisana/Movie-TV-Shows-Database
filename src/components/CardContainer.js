@@ -33,7 +33,7 @@ const CardContainer = ({ mediaType, info, preview, isCast, isSearch }) => {
             info.map((item, i) => {
               return (
                 i < index && (
-                  <Card item={item} key={item.id} mediaType={mediaType} />
+                  <Card item={item} key={item.id} mediaType={item.media_type} />
                 )
               );
             })

@@ -70,9 +70,10 @@ const CardTitle = styled.h2`
 `;
 
 const Card = ({ item, mediaType, isCast }) => {
+  const isPerson = isCast || mediaType === "person";
   return (
     <StyledCard>
-      {isCast && (
+      {isPerson && (
         <Link
           to={{
             pathname: `/person/${item.id}/info`,
@@ -92,7 +93,7 @@ const Card = ({ item, mediaType, isCast }) => {
           </TitleContainer>
         </Link>
       )}
-      {!isCast && (
+      {!isPerson && (
         <Link
           to={{
             pathname: `/${mediaType}/${item.id}/info`,

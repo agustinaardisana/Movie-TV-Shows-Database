@@ -33,7 +33,6 @@ const Search = () => {
   const [pageNumber, setPageNumber] = useState(1);
   const optionalQuery = `&query=${searchedValue}&page=${pageNumber}`;
   const { info, totalPages } = useFetch("multi", "search", "", optionalQuery);
-  console.log(info.length ? true : false);
 
   const changePageNumber = (e, value) => {
     setPageNumber(value);
