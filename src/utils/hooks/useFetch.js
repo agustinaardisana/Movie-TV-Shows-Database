@@ -10,7 +10,7 @@ const useFetch = (pathName, mediaType, details, optionalQuery) => {
     fetch(createURL(pathName, mediaType, details, optionalQuery))
       .then((res) => res.json())
       .then((data) => {
-        // console.log(data);
+        console.log(data);
         setInfo(data.results || data);
         setTotalPages(data.total_pages);
       });
