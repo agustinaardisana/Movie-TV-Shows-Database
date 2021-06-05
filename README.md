@@ -1,8 +1,8 @@
-# [🇺🇸EN] 🎬 Film and Television Database 🎬 (🚧 under construction 🚧)
+# [🇺🇸EN] 🎬 Film and Television Database 🎬
 
 This is the final project of the **Frontend web development** training at **ADA ITW**, and the first one bootstrapped with React.
 
-<!-- ### 🖱️[click to see](https://agustinaardisana.github.io/TP5-Comics_Search_Engine/) -->
+### 🖱️[click to see](https://moviesandtvdatabase.netlify.app/)
 
 ## Technologies and design
 
@@ -36,11 +36,11 @@ I'm a trainee Developer and this is my first project working with React. I have 
 
 ---
 
-# [🇦🇷ESP] 🎬 Base de Datos de Películas y Series 🎬 (🚧 en construcción 🚧)
+# [🇦🇷ESP] 🎬 Base de Datos de Películas y Series 🎬
 
 Este es el proyecto final de la currícula de la carrera de **Desarrollo Web Frontend** de **ADA ITW** y el primero trabajando con React.
 
-<!-- ### 🖱️[click aquí para verlo](https://agustinaardisana.github.io/TP5-Comics_Search_Engine/) -->
+### 🖱️[click aquí para verlo](https://moviesandtvdatabase.netlify.app/)
 
 ## Tecnologías y diseño
 
@@ -58,7 +58,7 @@ Las tecnologías usadas para este proyecto fueron:
 
 -Accesibilidad
 
-El diseño a seguir fue pre-establecido y puede verse [🔗aquí🔗](https://ada-5ta-final-extra.netlify.app/))
+El diseño a seguir fue pre-establecido y puede verse [🔗aquí🔗](https://ada-5ta-final-extra.netlify.app/)
 
 ## Estado del Proyecto y Funcionalidades
 
