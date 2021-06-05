@@ -15,7 +15,7 @@ const Img = styled(StyledImg)`
 const Page404 = () => {
   return (
     <Container>
-      <Img src={error404} alt="Error 404" />
+      <Img src={error404} alt="Error 404, página no encontrada" />
     </Container>
   );
 };
