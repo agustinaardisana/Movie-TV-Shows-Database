@@ -20,7 +20,6 @@ const StyledLink = styled.a`
 `;
 
 const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
-  console.log(externalIds.info.imdb_id);
   const imdbLink =
     mediaType !== "person"
       ? `https://www.imdb.com/title/${externalIds.info.imdb_id}`

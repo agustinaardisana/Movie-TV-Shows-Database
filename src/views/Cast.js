@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 //
 import CardContainer from "../components/CardContainer";
@@ -10,10 +9,7 @@ const StyledSection = styled.section`
   background-color: ${(props) => props.theme.colors.primary};
 `;
 
-const Cast = () => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const id = location.state.id;
+const Cast = ({ mediaType, id }) => {
   const { info } = useFetch(id, mediaType, "credits");
   const cast = info && info.cast;
 

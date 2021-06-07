@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 //
 import { Flex } from "../components/Commons";
@@ -29,10 +28,7 @@ const Title = styled.h4`
   max-width: 640px;
 `;
 
-const Videos = () => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const id = location.state.id;
+const Videos = ({ mediaType, id }) => {
   const { info } = useFetch(id, mediaType, "videos");
 
   const createSource = (site) => {

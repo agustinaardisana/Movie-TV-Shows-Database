@@ -71,15 +71,11 @@ const CardTitle = styled.h2`
 
 const Card = ({ item, mediaType, isCast }) => {
   const isPerson = isCast || mediaType === "person";
+
   return (
     <StyledCard>
       {isPerson && (
-        <Link
-          to={{
-            pathname: `/person/${item.id}/info`,
-            state: { id: `${item.id}` },
-          }}
-        >
+        <Link to={`/person/${item.id}/info`}>
           <Img
             src={
               item.profile_path
@@ -94,12 +90,7 @@ const Card = ({ item, mediaType, isCast }) => {
         </Link>
       )}
       {!isPerson && (
-        <Link
-          to={{
-            pathname: `/${mediaType}/${item.id}/info`,
-            state: { id: `${item.id}` },
-          }}
-        >
+        <Link to={`/${mediaType}/${item.id}/info`}>
           <Img
             src={
               item.poster_path

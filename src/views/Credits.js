@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 //
 import CardContainer from "../components/CardContainer";
@@ -9,10 +8,7 @@ const StyledSection = styled.section`
   padding: 0 ${(props) => props.theme.spacing.md};
 `;
 
-const Credits = () => {
-  const location = useLocation();
-  const mediaType = location.state.mediaType;
-  const id = location.state.id;
+const Credits = ({ mediaType, id }) => {
   const { info } = useFetch(id, mediaType, "combined_credits");
   const credits = info && info.cast;
 

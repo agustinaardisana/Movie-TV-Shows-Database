@@ -33,22 +33,34 @@ const InfoContainer = () => {
             />
           )}
         ></Route>
-        <Route exact path={`${url}/cast`} component={Cast} />
+        <Route
+          exact
+          path={`${url}/cast`}
+          component={() => <Cast mediaType={mediaType} id={id} />}
+        />
         {mediaType === "movie" ? (
-          <Route exact path={`${url}/videos`} component={Videos} />
+          <Route
+            exact
+            path={`${url}/videos`}
+            component={() => <Videos mediaType={mediaType} id={id} />}
+          />
         ) : (
           <Route
             exact
             path={`${url}/seasons/:seasonNumber`}
             component={() => <Seasons seasons={info.seasons} id={id} />}
           />
-        )}{" "}
+        )}
         <Route
           exact
           path={`${url}/similar`}
           component={() => <Similar mediaType={mediaType} id={id} />}
         />
-        <Route exact path={`${url}/credits`} component={Credits} />
+        <Route
+          exact
+          path={`${url}/credits`}
+          component={() => <Credits mediaType={mediaType} id={id} />}
+        />
       </Switch>
     </>
   );

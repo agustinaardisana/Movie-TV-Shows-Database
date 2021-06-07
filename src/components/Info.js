@@ -74,14 +74,7 @@ const Info = ({ info, mediaType, externalIds }) => {
                 {info.genres &&
                   info.genres.map((genre) => (
                     <StyledLink
-                      to={{
-                        pathname: `/${mediaType}/${genre.name}/${genre.id}/page/1`,
-                        state: {
-                          mediaType: `${mediaType}`,
-                          genreName: `${genre.name}`,
-                          genreId: `${genre.id}`,
-                        },
-                      }}
+                      to={`/${mediaType}/${genre.name}/${genre.id}/page/1`}
                       key={genre.name}
                     >
                       {genre.name}

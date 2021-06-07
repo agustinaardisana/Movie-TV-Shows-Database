@@ -47,7 +47,6 @@ const CardSection = ({
   isSearch,
 }) => {
   const isPreview = !isSearch && preview;
-
   return (
     <SectionContainer
       as="section"

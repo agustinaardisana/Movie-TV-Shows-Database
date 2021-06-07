@@ -36,13 +36,7 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
         {mediaType === "person" && (
           <StyledLi>
             <StyledLink
-              to={{
-                pathname: `/${mediaType}/${id}/credits`,
-                state: {
-                  id: `${id}`,
-                  mediaType: `${mediaType}`,
-                },
-              }}
+              to={`/${mediaType}/${id}/credits`}
               activeClassName="selected"
             >
               CREDITOS
@@ -53,13 +47,7 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
           <>
             <StyledLi>
               <StyledLink
-                to={{
-                  pathname: `/${mediaType}/${id}/cast`,
-                  state: {
-                    id: `${id}`,
-                    mediaType: `${mediaType}`,
-                  },
-                }}
+                to={`/${mediaType}/${id}/cast`}
                 activeClassName="selected"
               >
                 REPARTO
@@ -68,13 +56,7 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
             <StyledLi>
               {mediaType === "movie" ? (
                 <StyledLink
-                  to={{
-                    pathname: `/${mediaType}/${id}/videos`,
-                    state: {
-                      id: `${id}`,
-                      mediaType: `${mediaType}`,
-                    },
-                  }}
+                  to={`/${mediaType}/${id}/videos`}
                   activeClassName="selected"
                 >
                   VIDEOS
@@ -90,13 +72,7 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
             </StyledLi>
             <StyledLi>
               <StyledLink
-                to={{
-                  pathname: `/${mediaType}/${id}/similar`,
-                  state: {
-                    id: `${id}`,
-                    mediaType: `${mediaType}`,
-                  },
-                }}
+                to={`/${mediaType}/${id}/similar`}
                 activeClassName="selected"
               >
                 SIMILARES
