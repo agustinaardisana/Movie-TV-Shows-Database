@@ -48,22 +48,22 @@ const App = () => {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/movie" component={Movie} />
+            <Route exact path="/tv" component={TV} />
             <Route
               path="/search/multi/:searchedValue/page/:pageNumber"
               component={Search}
             />
             <Route
-              path="/movie/:category/page/:pagenumber"
+              path="/movie/:category/page/:pageNumber"
               component={MoviesCategory}
             />
-            <Route exact path="/tv" component={TV} />
             <Route
               exact
-              path={`/:mediaType/:genre/:genreId/page/:pagenumber`}
+              path={`/:mediaType/:genre/:genreId/page/:pageNumber`}
               component={Genre}
             />
             <Route
-              path="/tv/:category/page/:pagenumber"
+              path="/tv/:category/page/:pageNumber"
               component={TVShowsCategory}
             />
             <Route path="/:mediaType/:id" component={InfoContainer} />
