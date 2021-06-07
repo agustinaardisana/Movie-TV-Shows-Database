@@ -35,7 +35,7 @@ const BasicPagination = ({ totalPages, pageNumber, changePageNumber }) => {
             count={totalPages}
             defaultPage={1}
             onChange={handleChange}
-            pageNumber={pageNumber}
+            page={pageNumber}
           />
         </div>
       )}

@@ -24,7 +24,7 @@ const StyledLink = styled(Link)`
   display: flex;
   color: ${(props) => props.theme.colors.primary};
   line-height: 20px;
-  padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
+  padding-left: calc(${(props) => props.theme.spacing.sm});
 
   &:hover ${StyledSpan} {
     transform: scale(1.1) translateX(10px);

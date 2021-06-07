@@ -3,14 +3,21 @@ import styled from "styled-components";
 import imgNotAvailable from "../assets/picture_not_available.png";
 
 const StyledArticle = styled.article`
-  width: calc(23%);
+  width: calc(30%);
   margin: 20px ${(props) => props.theme.spacing.sm};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.large}) {
+    width: calc(50% - 20px);
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    width: ${(props) => props.theme.width.full};
+  }
 `;
 
 const StyledImg = styled.img`
   width: ${(props) => props.theme.width.full};
   height: auto;
-  max-height: 187px;
   margin-bottom: ${(props) => props.theme.spacing.xs};
   border-radius: ${(props) => props.theme.radius.regular};
 `;
@@ -35,7 +42,7 @@ const EpisodesCard = ({ info }) => {
       <StyledImg
         src={
           info.still_path
-            ? `https://image.tmdb.org/t/p/original/${info.still_path}`
+            ? `https://image.tmdb.org/t/p/w400/${info.still_path}`
             : imgNotAvailable
         }
         alt={info.name}
