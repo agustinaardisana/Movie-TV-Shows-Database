@@ -11,10 +11,17 @@ const StyledSection = styled.section`
 
 const Similar = ({ mediaType, id }) => {
   const { info } = useFetch(id, mediaType, "similar");
+  const isBlueBackground = true;
 
   return (
     <StyledSection>
-      {info && <CardContainer mediaType={mediaType} info={info} />}
+      {info && (
+        <CardContainer
+          mediaType={mediaType}
+          info={info}
+          isBlueBackground={isBlueBackground}
+        />
+      )}
     </StyledSection>
   );
 };

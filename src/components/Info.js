@@ -20,6 +20,10 @@ const FlexSection = styled(Flex)`
 
 const Img = styled(StyledImg)`
   margin-right: ${(props) => props.theme.spacing.md};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    width: 250px;
+  }
 `;
 
 const Container = styled.div`

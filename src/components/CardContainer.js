@@ -7,7 +7,14 @@ const StyledCardContainer = styled(Flex)`
   width: ${(props) => props.theme.width.full};
 `;
 
-const CardContainer = ({ mediaType, info, preview, isCast, isSearch }) => {
+const CardContainer = ({
+  mediaType,
+  info,
+  preview,
+  isCast,
+  isSearch,
+  isBlueBackground,
+}) => {
   let windowSize = window.innerWidth;
   let index = 0;
   const defineIndex = (windowSize) => {
@@ -17,10 +24,8 @@ const CardContainer = ({ mediaType, info, preview, isCast, isSearch }) => {
       return (index = 4);
     } else if (windowSize >= 650) {
       return (index = 3);
-    } else if (windowSize >= 450) {
-      return (index = 2);
     } else {
-      return (index = 1);
+      return (index = 2);
     }
   };
   defineIndex(windowSize);
@@ -50,6 +55,7 @@ const CardContainer = ({ mediaType, info, preview, isCast, isSearch }) => {
                   mediaType={item.media_type || mediaType}
                   isCast={isCast}
                   isSearch={isSearch}
+                  isBlueBackground={isBlueBackground}
                 />
               );
             })}

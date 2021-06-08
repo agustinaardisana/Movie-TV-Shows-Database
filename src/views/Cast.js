@@ -12,11 +12,17 @@ const StyledSection = styled.section`
 const Cast = ({ mediaType, id }) => {
   const { info } = useFetch(id, mediaType, "credits");
   const cast = info && info.cast;
+  const isBlueBackground = true;
 
   return (
     <StyledSection>
       {cast && (
-        <CardContainer mediaType={mediaType} info={cast} isCast={true} />
+        <CardContainer
+          mediaType={mediaType}
+          info={cast}
+          isCast={true}
+          isBlueBackground={isBlueBackground}
+        />
       )}
     </StyledSection>
   );

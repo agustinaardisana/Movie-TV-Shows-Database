@@ -35,7 +35,6 @@ const Home = () => {
           preview={isPreview}
         />
       </HomeContainer>
-      ;
     </>
   );
 };

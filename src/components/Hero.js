@@ -4,6 +4,10 @@ const HeroContainer = styled.div`
   width: ${(props) => props.theme.width.full};
   height: 600px;
   background-color: ${(props) => props.theme.colors.primaryLight};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    height: 300px;
+  }
 `;
 
 const HeroImage = styled.div`
@@ -11,7 +15,8 @@ const HeroImage = styled.div`
   height: ${(props) => props.theme.height.full};
   background-image: url("${(props) => props.src}");
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
 `;
 
 const Hero = ({ info }) => {

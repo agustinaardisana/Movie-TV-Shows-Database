@@ -82,7 +82,7 @@ const CardTitle = styled.h2`
   color: ${(props) => props.theme.colors.text};
 
   @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
-    color: ${(props) => (props.isPerson ? "#fff" : "#032541")};
+    color: ${(props) => (props.isBlueBackground ? "#fff" : "#032541")};
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
@@ -90,7 +90,7 @@ const CardTitle = styled.h2`
   }
 `;
 
-const Card = ({ item, mediaType, isCast }) => {
+const Card = ({ item, mediaType, isCast, isBlueBackground }) => {
   const isPerson = isCast || mediaType === "person";
 
   return (
@@ -106,7 +106,9 @@ const Card = ({ item, mediaType, isCast }) => {
             alt={item.name}
           />
           <TitleContainer>
-            <CardTitle isPerson={isPerson}>{item.title || item.name}</CardTitle>
+            <CardTitle isBlueBackground={isBlueBackground}>
+              {item.title || item.name}
+            </CardTitle>
           </TitleContainer>
         </Link>
       )}
@@ -121,7 +123,9 @@ const Card = ({ item, mediaType, isCast }) => {
             alt={item.title || item.name}
           />
           <TitleContainer>
-            <CardTitle>{item.title || item.name}</CardTitle>
+            <CardTitle isBlueBackground={isBlueBackground}>
+              {item.title || item.name}
+            </CardTitle>
           </TitleContainer>
         </Link>
       )}
