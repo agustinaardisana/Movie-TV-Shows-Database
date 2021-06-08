@@ -70,10 +70,7 @@ const StyledCard = styled.article`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
-    width: calc(50% - 6px);
-  }
-  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
-    width: ${(props) => props.theme.width.full};
+    width: calc(50% - 10px);
   }
 `;
 
@@ -86,6 +83,10 @@ const CardTitle = styled.h2`
 
   @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
     color: ${(props) => (props.isPerson ? "#fff" : "#032541")};
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    font-size: ${(props) => props.theme.fonts.sizes.p};
   }
 `;
 
