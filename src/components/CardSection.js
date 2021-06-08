@@ -29,6 +29,10 @@ const StyledLink = styled(Link)`
   &:hover ${StyledSpan} {
     transform: scale(1.1) translateX(10px);
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.large}) {
+    padding-left: 0;
+  }
 `;
 
 const StyledTitle = styled.h2`
@@ -36,6 +40,10 @@ const StyledTitle = styled.h2`
   color: ${(props) => props.theme.colors.primary};
   line-height: 20px;
   padding-left: calc(${(props) => props.theme.spacing.sm} * 2);
+
+  @media (max-width: ${(props) => props.theme.breakpoints.large}) {
+    padding-left: ${(props) => props.theme.spacing.xxs};
+  }
 `;
 
 const CardSection = ({

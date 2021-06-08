@@ -34,7 +34,7 @@ export const Nav = styled.nav`
   background-color: ${(props) => props.theme.colors.primary};
 `;
 
-export const StyledUl = styled.ul`
+export const Ul = styled.ul`
   display: flex;
 `;
 

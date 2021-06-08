@@ -46,18 +46,18 @@ const StyledCard = styled.article`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.large}) {
-    width: 22%;
+    width: calc(25% - 6px);
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
-    width: 30%;
+    width: calc(33% - 6px);
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
-    width: 45%;
+    width: calc(50% - 6px);
   }
   @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
-    width: 90%;
+    width: ${(props) => props.theme.width.full};
   }
 `;
 

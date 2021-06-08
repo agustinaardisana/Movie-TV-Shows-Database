@@ -12,12 +12,35 @@ const StyledSection = styled(Flex)`
 
 const Container = styled(Flex)`
   margin: ${(props) => props.theme.spacing.sm};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    max-width: 480px;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    max-width: 320px;
+  }
 `;
 
 const StyledIFrame = styled.iframe`
   width: 640px;
   height: 360px;
   border: none;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    width: 480px;
+    height: 270px;
+  }
+
+  @media (max-width: 490px) {
+    width: 320px;
+    height: 180px;
+  }
+
+  @media (max-width: 340px) {
+    width: 160px;
+    height: 90px;
+  }
 `;
 
 const Title = styled.h4`
@@ -26,6 +49,10 @@ const Title = styled.h4`
   color: ${(props) => props.theme.colors.text};
   margin-top: ${(props) => props.theme.spacing.sm};
   max-width: 640px;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    font-size: ${(props) => props.theme.fonts.sizes.p};
+  }
 `;
 
 const Videos = ({ mediaType, id }) => {

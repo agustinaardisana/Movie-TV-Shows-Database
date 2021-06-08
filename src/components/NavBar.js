@@ -5,7 +5,7 @@ import HomeRoundedIcon from "@material-ui/icons/HomeRounded";
 import TheatersRoundedIcon from "@material-ui/icons/TheatersRounded";
 import LiveTvRoundedIcon from "@material-ui/icons/LiveTvRounded";
 //
-import { Nav, StyledUl, StyledLi } from "./Commons";
+import { Nav, Ul, StyledLi } from "./Commons";
 import Form from "./Form";
 
 const StyledNav = styled(Nav)`
@@ -13,7 +13,7 @@ const StyledNav = styled(Nav)`
   height: 90px;
 `;
 
-const List = styled(StyledUl)`
+const List = styled(Ul)`
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
     position: ${(props) => props.theme.position.fixed};
     bottom: 0;

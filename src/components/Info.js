@@ -11,6 +11,11 @@ import imgNotAvailable from "../assets/picture_not_available.png";
 const FlexSection = styled(Flex)`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.md};
+
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 const Img = styled(StyledImg)`
@@ -21,6 +26,10 @@ const Container = styled.div`
   max-width: 600px;
   padding: 0 ${(props) => props.theme.spacing.md};
   color: ${(props) => props.theme.colors.text};
+
+  @media (max-width: 750px) {
+    margin-top: ${(props) => props.theme.spacing.md};
+  }
 `;
 
 const Title = styled.h2`

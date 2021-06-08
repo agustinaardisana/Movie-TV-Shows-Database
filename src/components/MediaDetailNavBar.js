@@ -1,10 +1,17 @@
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 //
-import { Nav, StyledUl, StyledLi } from "./Commons";
+import { Nav, Ul, StyledLi } from "./Commons";
 
 const StyledNav = styled(Nav)`
   /*  */
+`;
+
+const StyledUl = styled(Ul)`
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 `;
 
 const StyledLink = styled(NavLink)`
@@ -18,6 +25,11 @@ const StyledLink = styled(NavLink)`
   &.selected {
     border-bottom: 2px solid ${(props) => props.theme.colors.text};
     opacity: 1;
+  }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+    font-size: ${(props) => props.theme.fonts.sizes.p};
+    padding-top: ${(props) => props.theme.spacing.xs};
   }
 `;
 
