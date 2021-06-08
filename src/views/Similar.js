@@ -2,6 +2,7 @@ import styled from "styled-components";
 //
 import CardContainer from "../components/CardContainer";
 import useFetch from "../utils/hooks/useFetch";
+import Loader from "../components/Loader";
 
 const StyledSection = styled.section`
   padding: ${(props) => props.theme.spacing.lg}
@@ -10,19 +11,25 @@ const StyledSection = styled.section`
 `;
 
 const Similar = ({ mediaType, id }) => {
-  const { info } = useFetch(id, mediaType, "similar");
+  const { info, isLoading } = useFetch(id, mediaType, "similar");
   const isBlueBackground = true;
 
   return (
-    <StyledSection>
-      {info && (
-        <CardContainer
-          mediaType={mediaType}
-          info={info}
-          isBlueBackground={isBlueBackground}
-        />
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <StyledSection>
+          {info && (
+            <CardContainer
+              mediaType={mediaType}
+              info={info}
+              isBlueBackground={isBlueBackground}
+            />
+          )}
+        </StyledSection>
       )}
-    </StyledSection>
+    </>
   );
 };
 

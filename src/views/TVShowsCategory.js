@@ -5,6 +5,7 @@ import styled from "styled-components";
 import CardSection from "../components/CardSection";
 import BasicPagination from "../components/BasicPagination";
 import { generateTitle } from "../utils/variables";
+import Loader from "../components/Loader";
 import useFetch from "../utils/hooks/useFetch";
 
 const TVShowsCategoryContainer = styled.main`
@@ -19,7 +20,7 @@ const TVShowsCategory = () => {
   const category = params.category;
   const title = generateTitle(mediaType, category);
   const [pageNumber, setPageNumber] = useState(1);
-  const { info, totalPages } = useFetch(
+  const { info, totalPages, isLoading } = useFetch(
     category,
     mediaType,
     "",
@@ -32,18 +33,24 @@ const TVShowsCategory = () => {
   };
 
   return (
-    <TVShowsCategoryContainer>
-      <CardSection
-        title={title}
-        mediaType={mediaType}
-        info={info}
-      ></CardSection>
-      <BasicPagination
-        totalPages={totalPages}
-        changePageNumber={changePageNumber}
-        pageNumber={pageNumber}
-      />
-    </TVShowsCategoryContainer>
+    <>
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <TVShowsCategoryContainer>
+          <CardSection
+            title={title}
+            mediaType={mediaType}
+            info={info}
+          ></CardSection>
+          <BasicPagination
+            totalPages={totalPages}
+            changePageNumber={changePageNumber}
+            pageNumber={pageNumber}
+          />
+        </TVShowsCategoryContainer>
+      )}
+    </>
   );
 };
 

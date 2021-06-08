@@ -11,11 +11,6 @@ import Form from "./Form";
 const StyledNav = styled(Nav)`
   width: ${(props) => props.theme.width.full};
   height: 90px;
-
-  @media all and (max-width: ${(props) =>
-      props.theme.breakpoints.small}) and (orientation: landscape) {
-    width: ${(props) => props.theme.width.full};
-  }
 `;
 
 const List = styled(Ul)`

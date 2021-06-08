@@ -17,6 +17,7 @@ const Home = () => {
   const { info: infoMovie } = useFetch(location.pathname, mediaTypeMovie);
   const { info: infoTV } = useFetch(location.pathname, mediaTypeTV);
   const isPreview = showPreview(location.pathname);
+
   return (
     <>
       <HomeContainer>
