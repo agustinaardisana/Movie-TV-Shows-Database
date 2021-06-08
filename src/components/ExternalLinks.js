@@ -29,7 +29,6 @@ const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
     <FlexContainer>
       {externalIds.info.imdb_id && (
         <StyledLink target="_blank" href={imdbLink}>
-          {/* <LinkIcon fontSize="large" /> */}
           <FontAwesomeIcon icon={faImdb} />
         </StyledLink>
       )}

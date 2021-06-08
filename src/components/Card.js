@@ -23,6 +23,13 @@ const TitleContainer = styled(FlexCenter)`
   opacity: 0;
   transform: translateY(100%) translateX(-50%);
   transition-duration: 1s;
+
+  @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
+    transform: unset;
+    position: unset;
+    background: unset;
+    opacity: unset;
+  }
 `;
 
 const StyledCard = styled.article`
@@ -51,6 +58,7 @@ const StyledCard = styled.article`
 
   @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
     width: calc(33% - 6px);
+    transform: unset;
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
@@ -67,6 +75,10 @@ const Img = styled(StyledImg)`
 
 const CardTitle = styled.h2`
   color: ${(props) => props.theme.colors.text};
+
+  @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
+    color: ${(props) => (props.isPerson ? "#fff" : "#032541")};
+  }
 `;
 
 const Card = ({ item, mediaType, isCast }) => {
@@ -85,7 +97,7 @@ const Card = ({ item, mediaType, isCast }) => {
             alt={item.name}
           />
           <TitleContainer>
-            <CardTitle>{item.title || item.name}</CardTitle>
+            <CardTitle isPerson={isPerson}>{item.title || item.name}</CardTitle>
           </TitleContainer>
         </Link>
       )}
