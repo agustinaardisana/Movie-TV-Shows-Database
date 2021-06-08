@@ -59,6 +59,14 @@ const StyledCard = styled.article`
   @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
     width: calc(33% - 6px);
     transform: unset;
+
+    &:hover {
+      transform: unset;
+    }
+
+    &:hover ${TitleContainer} {
+      transform: unset;
+    }
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
