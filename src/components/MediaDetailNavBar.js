@@ -3,12 +3,8 @@ import { NavLink } from "react-router-dom";
 //
 import { Nav, Ul, StyledLi } from "./Commons";
 
-const StyledNav = styled(Nav)`
-  /*  */
-`;
-
 const StyledUl = styled(Ul)`
-  @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
+  @media (max-width: 300px) {
     flex-wrap: wrap;
     justify-content: space-between;
   }
@@ -28,14 +24,18 @@ const StyledLink = styled(NavLink)`
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
-    font-size: ${(props) => props.theme.fonts.sizes.p};
+    font-size: 14px;
+  }
+
+  @media (max-width: 300px) {
     padding-top: ${(props) => props.theme.spacing.xs};
+    margin-left: ${(props) => props.theme.spacing.md};
   }
 `;
 
 const MediaDetailNavBar = ({ id, mediaType }) => {
   return (
-    <StyledNav justifyContent="space-around">
+    <Nav justifyContent="space-around">
       <StyledUl>
         <StyledLi>
           <StyledLink
@@ -93,7 +93,7 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
           </>
         )}
       </StyledUl>
-    </StyledNav>
+    </Nav>
   );
 };
 
