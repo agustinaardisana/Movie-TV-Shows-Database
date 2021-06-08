@@ -6,11 +6,16 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import { FlexCenter } from "./Commons";
 
 const FooterContainer = styled(FlexCenter)`
-  width: 100%;
+  width: ${(props) => props.theme.width.full};
   height: 80px;
   padding: 0 30px;
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.text};
+
+  @supports (padding: max(0px)) {
+    padding-left: min(0vmin, env(safe-area-inset-left));
+    padding-right: min(0vmin, env(safe-area-inset-right));
+  }
 `;
 
 const StyledLink = styled.a`
