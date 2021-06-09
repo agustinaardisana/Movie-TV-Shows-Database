@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 //
-import { FlexCenter, StyledImg } from "./Commons";
+import { FlexCenter } from "./Commons";
+import CardImage from "./CardImage";
 //
-import imgNotAvailable from "../assets/picture_not_available.png";
 
 const TitleContainer = styled(FlexCenter)`
   text-align: center;
@@ -74,10 +74,6 @@ const StyledCard = styled.article`
   }
 `;
 
-const Img = styled(StyledImg)`
-  border-radius: ${(props) => props.theme.radius.regular};
-`;
-
 const CardTitle = styled.h2`
   color: ${(props) => props.theme.colors.text};
 
@@ -97,14 +93,7 @@ const Card = ({ item, mediaType, isCast, isBlueBackground }) => {
     <StyledCard>
       {isPerson && (
         <Link to={`/person/${item.id}/info`}>
-          <Img
-            src={
-              item.profile_path
-                ? `https://image.tmdb.org/t/p/w342/${item.profile_path}`
-                : imgNotAvailable
-            }
-            alt={item.name}
-          />
+          <CardImage isPerson={isPerson} info={item} />
           <TitleContainer>
             <CardTitle isBlueBackground={isBlueBackground}>
               {item.title || item.name}
@@ -114,14 +103,7 @@ const Card = ({ item, mediaType, isCast, isBlueBackground }) => {
       )}
       {!isPerson && (
         <Link to={`/${mediaType}/${item.id}/info`}>
-          <Img
-            src={
-              item.poster_path
-                ? `https://image.tmdb.org/t/p/w370_and_h556_bestv2/${item.poster_path}`
-                : imgNotAvailable
-            }
-            alt={item.title || item.name}
-          />
+          <CardImage isPerson={isPerson} info={item} />
           <TitleContainer>
             <CardTitle isBlueBackground={isBlueBackground}>
               {item.title || item.name}

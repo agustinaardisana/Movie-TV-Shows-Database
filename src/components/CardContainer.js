@@ -17,6 +17,7 @@ const CardContainer = ({
 }) => {
   let windowSize = window.innerWidth;
   let index = 0;
+
   const defineIndex = (windowSize) => {
     if (windowSize >= 1200) {
       return (index = 5);
