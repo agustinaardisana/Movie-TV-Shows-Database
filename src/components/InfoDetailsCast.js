@@ -1,9 +1,7 @@
 import styled from "styled-components";
-import { Link } from "react-router-dom";
 //
 import { notAvailable } from "../utils/variables";
 import CardImage from "./CardImage";
-import Rating from "./Rating";
 import ExternalLinks from "./ExternalLinks";
 
 const Container = styled.div`
@@ -27,19 +25,7 @@ const Text = styled.p`
   font-size: ${(props) => props.theme.fonts.sizes.p};
 `;
 
-const StyledLink = styled(Link)`
-  margin-right: ${(props) => props.theme.spacing.sm};
-  color: ${(props) => props.theme.colors.link};
-
-  &:hover {
-    color: ${(props) => props.theme.colors.text};
-    border-bottom: 2px solid ${(props) => props.theme.colors.text};
-  }
-`;
-
 const InfoDetailsCast = ({ mediaType, info, externalIds }) => {
-  console.log(info);
-
   return (
     <>
       <CardImage isInfoView={true} isPerson={true} info={info} />
@@ -47,7 +33,7 @@ const InfoDetailsCast = ({ mediaType, info, externalIds }) => {
       <Container>
         <Title>{info.name}</Title>
 
-        <Text>{info.biography}</Text>
+        <Text>{info.biography || notAvailable}</Text>
 
         {externalIds && (
           <ExternalLinks

@@ -53,7 +53,4 @@ export const theme = {
     medium: "1000px",
     large: "1200px",
   },
-
-  // Borders
-  // Shadows
 };

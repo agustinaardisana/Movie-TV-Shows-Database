@@ -35,6 +35,7 @@ const Search = () => {
     "",
     optionalQuery
   );
+  const thereAreResults = info.length;
 
   const changePageNumber = (e, value) => {
     setPageNumber(value);
@@ -47,7 +48,7 @@ const Search = () => {
         <Loader />
       ) : (
         <SearchContainer>
-          {info.length ? (
+          {thereAreResults ? (
             <>
               <CardSection
                 title={`Resultados para: ${searchedValue}`}

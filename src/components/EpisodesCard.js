@@ -1,6 +1,6 @@
 import styled from "styled-components";
 //
-import imgNotAvailable from "../assets/picture_not_available.png";
+import imgNotAvailable from "../assets/episode_not_available.png";
 
 const StyledArticle = styled.article`
   width: calc(30%);

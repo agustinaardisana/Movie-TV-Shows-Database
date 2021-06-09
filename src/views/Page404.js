@@ -9,10 +9,6 @@ const Container = styled(FlexCenter)`
   flex-direction: column;
 `;
 
-const Img = styled(StyledImg)`
-  /* css */
-`;
-
 const StyledTitle = styled.h2`
   color: ${(props) => props.theme.colors.primary};
   font-family: ${(props) => props.theme.fonts.families.title};
@@ -26,7 +22,7 @@ const Page404 = () => {
       <StyledTitle>
         Lo sentimos, no podemos encontrar la página a la que intentas ir.
       </StyledTitle>
-      <Img src={error404} alt="Error 404, página no encontrada" />
+      <StyledImg src={error404} alt="Error 404, página no encontrada" />
     </Container>
   );
 };

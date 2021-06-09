@@ -38,6 +38,8 @@ const StyledLink = styled(Link)`
 `;
 
 const InfoDetailsMovie = ({ mediaType, info, externalIds }) => {
+  const productionCompaniesInfo =
+    info.production_companies && info.production_companies.length;
   return (
     <>
       <CardImage isInfoView={true} info={info} />
@@ -74,8 +76,11 @@ const InfoDetailsMovie = ({ mediaType, info, externalIds }) => {
 
         <Text>
           Producción:{" "}
-          {info.production_companies &&
-            info.production_companies.map((company) => company.name).join(", ")}
+          {productionCompaniesInfo
+            ? info.production_companies
+                .map((company) => company.name)
+                .join(", ")
+            : notAvailable}
         </Text>
 
         {externalIds && (

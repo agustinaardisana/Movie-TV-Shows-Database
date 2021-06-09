@@ -69,8 +69,11 @@ const InfoDetailsTV = ({ mediaType, info, externalIds }) => {
 
         <Text>
           Producción:{" "}
-          {info.production_companies &&
-            info.production_companies.map((company) => company.name).join(", ")}
+          {info.production_companies
+            ? info.production_companies
+                .map((company) => company.name)
+                .join(", ")
+            : notAvailable}
         </Text>
 
         {externalIds && (

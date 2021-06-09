@@ -22,8 +22,6 @@ const StyledInput = styled.input`
   background-color: ${(props) => props.theme.colors.primary};
   padding: ${(props) => props.theme.spacing.sm};
   transition: ease width 1s, ease opacity 1s;
-  /* opacity: 0;
-  /* review  this, I don't think it works*/
   opacity: ${(props) => (props.openInput ? "1" : "0")};
 `;
 
