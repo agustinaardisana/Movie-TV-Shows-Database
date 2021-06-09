@@ -3,7 +3,6 @@ import styled from "styled-components";
 //
 import { FlexCenter } from "./Commons";
 import CardImage from "./CardImage";
-//
 
 const TitleContainer = styled(FlexCenter)`
   text-align: center;

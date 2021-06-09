@@ -48,3 +48,12 @@ export const showPreview = (pathName) => {
 };
 
 export const notAvailable = "Información no disponible";
+
+export const convertToUsd = (amount) => {
+  const number = amount.toLocaleString("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+  return number;
+};
