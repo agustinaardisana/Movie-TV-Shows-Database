@@ -5,6 +5,7 @@ import { useHistory } from "react-router-dom";
 import SearchIcon from "@material-ui/icons/Search";
 //
 import { AlignedButton } from "./Commons";
+import HiddenTitle from "./HiddenTitle";
 
 const StyledForm = styled.form`
   width: 250px;
@@ -60,6 +61,7 @@ const Form = () => {
               transform="translateX(200px)"
             >
               <SearchIcon aria-label="búsqueda" fontSize="large" />
+              <HiddenTitle>Búsqueda</HiddenTitle>
             </SearchButton>
             <StyledInput
               openInput={openInput}

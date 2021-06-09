@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImdb } from "@fortawesome/free-brands-svg-icons";
 //
 import { Flex } from "./Commons";
+import HiddenTitle from "./HiddenTitle";
 
 const FlexContainer = styled(Flex)`
   padding-top: ${(props) => props.theme.spacing.sm};
@@ -30,6 +31,7 @@ const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
       {externalIds.info.imdb_id && (
         <StyledLink target="_blank" href={imdbLink}>
           <FontAwesomeIcon icon={faImdb} />
+          <HiddenTitle>Link a imdb</HiddenTitle>
         </StyledLink>
       )}
       {externalIds.info.facebook_id && (
@@ -39,6 +41,7 @@ const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
         >
           {" "}
           <FacebookIcon fontSize="large" />
+          <HiddenTitle>Link a Facebook</HiddenTitle>
         </StyledLink>
       )}
       {externalIds.info.instagram_id && (
@@ -47,6 +50,7 @@ const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
           href={`https://www.instagram.com/${externalIds.info.instagram_id}`}
         >
           <InstagramIcon fontSize="large" />
+          <HiddenTitle>Link a Instagram</HiddenTitle>
         </StyledLink>
       )}
       {externalIds.info.twitter_id && (
@@ -55,11 +59,13 @@ const ExternalLinks = ({ externalIds, homepage, mediaType }) => {
           href={`https://twitter.com/${externalIds.info.twitter_id}`}
         >
           <TwitterIcon fontSize="large" />
+          <HiddenTitle>Link a Twitter</HiddenTitle>
         </StyledLink>
       )}
       {homepage && (
         <StyledLink target="_blank" href={homepage}>
           <LinkIcon fontSize="large" />
+          <HiddenTitle>Link a la web oficial</HiddenTitle>
         </StyledLink>
       )}
     </FlexContainer>

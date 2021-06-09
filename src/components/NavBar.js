@@ -7,6 +7,7 @@ import LiveTvRoundedIcon from "@material-ui/icons/LiveTvRounded";
 //
 import { Nav, Ul, StyledLi } from "./Commons";
 import Form from "./Form";
+import HiddenTitle from "./HiddenTitle";
 
 const StyledNav = styled(Nav)`
   width: ${(props) => props.theme.width.full};
@@ -50,16 +51,19 @@ const NavBar = () => {
           <StyledLi>
             <StyledLink exact to="/" activeClassName="selected">
               <HomeRoundedIcon aria-label="inicio" fontSize="large" />
+              <HiddenTitle>Inicio</HiddenTitle>
             </StyledLink>
           </StyledLi>
           <StyledLi>
             <StyledLink to="/movie" activeClassName="selected">
               <TheatersRoundedIcon aria-label="películas" fontSize="large" />
+              <HiddenTitle>Películas</HiddenTitle>
             </StyledLink>
           </StyledLi>
           <StyledLi>
             <StyledLink to="/tv" activeClassName="selected">
               <LiveTvRoundedIcon aria-label="series" fontSize="large" />
+              <HiddenTitle>Series</HiddenTitle>
             </StyledLink>
           </StyledLi>
         </List>

@@ -4,6 +4,7 @@ import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 //
 import { FlexCenter } from "./Commons";
+import HiddenTitle from "./HiddenTitle";
 
 const FooterContainer = styled(FlexCenter)`
   width: ${(props) => props.theme.width.full};
@@ -43,12 +44,14 @@ const Footer = () => {
       </StyledLink>
       <StyledLink href="https://github.com/agustinaardisana" target="_blank">
         <GitHubIcon />
+        <HiddenTitle>Link a GitHub</HiddenTitle>
       </StyledLink>
       <StyledLink
         href="https://www.linkedin.com/in/agustinaardisana/"
         target="_blank"
       >
         <LinkedInIcon />
+        <HiddenTitle>Link a LinkedIn</HiddenTitle>
       </StyledLink>
     </FooterContainer>
   );
