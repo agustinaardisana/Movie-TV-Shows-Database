@@ -3,10 +3,22 @@ import { NavLink } from "react-router-dom";
 //
 import { Nav, Ul, StyledLi } from "./Commons";
 
+const StyledNav = styled(Nav)`
+  @media (max-width: 300px) {
+    padding: ${(props) => props.theme.spacing.sm};
+  }
+`;
+
 const StyledUl = styled(Ul)`
   @media (max-width: 300px) {
     flex-wrap: wrap;
     justify-content: space-between;
+  }
+`;
+
+const ListItem = styled(StyledLi)`
+  @media (max-width: 300px) {
+    margin: ${(props) => props.theme.spacing.sm};
   }
 `;
 
@@ -26,46 +38,41 @@ const StyledLink = styled(NavLink)`
   @media (max-width: ${(props) => props.theme.breakpoints.extraSmall}) {
     font-size: 14px;
   }
-
-  @media (max-width: 300px) {
-    padding-top: ${(props) => props.theme.spacing.xs};
-    margin-left: ${(props) => props.theme.spacing.md};
-  }
 `;
 
 const MediaDetailNavBar = ({ id, mediaType }) => {
   return (
     <Nav justifyContent="space-around">
       <StyledUl>
-        <StyledLi>
+        <ListItem>
           <StyledLink
             to={`/${mediaType}/${id}/info`}
             activeClassName="selected"
           >
             INFO
           </StyledLink>
-        </StyledLi>
+        </ListItem>
         {mediaType === "person" && (
-          <StyledLi>
+          <ListItem>
             <StyledLink
               to={`/${mediaType}/${id}/credits`}
               activeClassName="selected"
             >
               CREDITOS
             </StyledLink>
-          </StyledLi>
+          </ListItem>
         )}
         {mediaType !== "person" && (
           <>
-            <StyledLi>
+            <ListItem>
               <StyledLink
                 to={`/${mediaType}/${id}/cast`}
                 activeClassName="selected"
               >
                 REPARTO
               </StyledLink>
-            </StyledLi>
-            <StyledLi>
+            </ListItem>
+            <ListItem>
               {mediaType === "movie" ? (
                 <StyledLink
                   to={`/${mediaType}/${id}/videos`}
@@ -81,15 +88,15 @@ const MediaDetailNavBar = ({ id, mediaType }) => {
                   EPISODIOS
                 </StyledLink>
               )}
-            </StyledLi>
-            <StyledLi>
+            </ListItem>
+            <ListItem>
               <StyledLink
                 to={`/${mediaType}/${id}/similar`}
                 activeClassName="selected"
               >
                 SIMILARES
               </StyledLink>
-            </StyledLi>{" "}
+            </ListItem>{" "}
           </>
         )}
       </StyledUl>

@@ -16,6 +16,10 @@ const useStyles = makeStyles((theme) => ({
     "& > *": {
       marginTop: theme.spacing(2),
     },
+    size: "large",
+    [theme.breakpoints.down(450)]: {
+      size: "small",
+    },
   },
 }));
 
