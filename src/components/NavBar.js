@@ -12,11 +12,6 @@ import HiddenTitle from "./HiddenTitle";
 const StyledNav = styled(Nav)`
   width: ${(props) => props.theme.width.full};
   height: 90px;
-
-  @supports (padding: max(0px)) {
-    padding-left: min(0vmin, env(safe-area-inset-left));
-    padding-right: min(0vmin, env(safe-area-inset-right));
-  }
 `;
 
 const List = styled(Ul)`

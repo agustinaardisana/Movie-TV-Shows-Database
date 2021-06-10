@@ -12,11 +12,6 @@ const FooterContainer = styled(FlexCenter)`
   padding: 0 30px;
   background-color: ${(props) => props.theme.colors.primary};
   color: ${(props) => props.theme.colors.text};
-
-  @supports (padding: max(0px)) {
-    padding-left: min(0vmin, env(safe-area-inset-left));
-    padding-right: min(0vmin, env(safe-area-inset-right));
-  }
 `;
 
 const StyledLink = styled.a`
@@ -31,28 +26,30 @@ const StyledLink = styled.a`
 const Footer = () => {
   return (
     <FooterContainer as="footer">
-      Hecho con ☕ y 🎶 en
-      <StyledLink href="https://adaitw.org/" target="_blank">
-        Ada ITW
-      </StyledLink>
-      por
-      <StyledLink
-        href="https://www.linkedin.com/in/agustinaardisana/"
-        target="_blank"
-      >
-        Agus Ardisana
-      </StyledLink>
-      <StyledLink href="https://github.com/agustinaardisana" target="_blank">
-        <GitHubIcon />
-        <HiddenTitle>Link a GitHub</HiddenTitle>
-      </StyledLink>
-      <StyledLink
-        href="https://www.linkedin.com/in/agustinaardisana/"
-        target="_blank"
-      >
-        <LinkedInIcon />
-        <HiddenTitle>Link a LinkedIn</HiddenTitle>
-      </StyledLink>
+      <p>
+        Hecho con ☕ y 🎶 en
+        <StyledLink href="https://adaitw.org/" target="_blank">
+          Ada ITW
+        </StyledLink>
+        por
+        <StyledLink
+          href="https://www.linkedin.com/in/agustinaardisana/"
+          target="_blank"
+        >
+          Agus Ardisana
+        </StyledLink>
+        <StyledLink href="https://github.com/agustinaardisana" target="_blank">
+          <GitHubIcon />
+          <HiddenTitle>Link a GitHub</HiddenTitle>
+        </StyledLink>
+        <StyledLink
+          href="https://www.linkedin.com/in/agustinaardisana/"
+          target="_blank"
+        >
+          <LinkedInIcon />
+          <HiddenTitle>Link a LinkedIn</HiddenTitle>
+        </StyledLink>
+      </p>
     </FooterContainer>
   );
 };

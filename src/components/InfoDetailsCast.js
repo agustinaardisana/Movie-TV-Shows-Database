@@ -12,6 +12,9 @@ const Container = styled.div`
   @media (max-width: 750px) {
     margin-top: ${(props) => props.theme.spacing.md};
   }
+  @media (max-width: 350px) {
+    max-width: 250px;
+  }
 `;
 
 const Title = styled.h2`

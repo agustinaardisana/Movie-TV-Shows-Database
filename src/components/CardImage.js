@@ -11,6 +11,7 @@ const Img = styled(StyledImg)`
 
   @media (max-width: ${(props) => props.theme.breakpoints.small}) {
     width: ${(props) => props.isInfoView && "250px"};
+    margin-right: 0;
   }
 `;
 

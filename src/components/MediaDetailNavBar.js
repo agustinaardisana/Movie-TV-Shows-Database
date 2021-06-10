@@ -3,12 +3,6 @@ import { NavLink } from "react-router-dom";
 //
 import { Nav, Ul, StyledLi } from "./Commons";
 
-const StyledNav = styled(Nav)`
-  @media (max-width: 300px) {
-    padding: ${(props) => props.theme.spacing.sm};
-  }
-`;
-
 const StyledUl = styled(Ul)`
   @media (max-width: 300px) {
     flex-wrap: wrap;

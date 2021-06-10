@@ -12,6 +12,11 @@ import HiddenTitle from "./HiddenTitle";
 
 const FlexContainer = styled(Flex)`
   padding-top: ${(props) => props.theme.spacing.sm};
+
+  @media (max-width: 350px) {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
 `;
 
 const StyledLink = styled.a`
