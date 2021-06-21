@@ -53,6 +53,7 @@ const CardSection = ({
   preview,
   isSearch,
 }) => {
+  // excelente
   const isPreview = !isSearch && preview;
   return (
     <SectionContainer

@@ -35,6 +35,9 @@ const Search = () => {
     "",
     optionalQuery
   );
+
+  // si una variable asi te resulta mas clara, genial, pero te aviso que en general vas a ver en el codigo que 
+  // los devs van a usar info.length y entender que eso significa "hay resultados"
   const thereAreResults = info.length;
 
   const changePageNumber = (e, value) => {

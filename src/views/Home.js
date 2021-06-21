@@ -11,6 +11,9 @@ const HomeContainer = styled.main`
 `;
 
 const Home = () => {
+  // esto deberia ser const: salvo que estes 100% segura de que va a cambiar, usa const 
+  // si solo vas a usar location.pathname, podrias desestructurar:
+  // const { pathname } = useLocation()
   let location = useLocation();
   const mediaTypeMovie = "movie";
   const mediaTypeTV = "tv";

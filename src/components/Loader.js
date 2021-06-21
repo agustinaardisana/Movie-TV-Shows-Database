@@ -41,6 +41,7 @@ const StyledTitle = styled.h2`
 `;
 
 const Loader = () => {
+  // perfecto este loader
   const classes = useStyles();
 
   return (

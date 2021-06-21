@@ -41,6 +41,9 @@ const Form = () => {
   const [searchValue, setSearchValue] = useState("");
 
   const handleSubmit = (e) => {
+// no deberias necesitar esto, porque el form ya solito escucha el enter en el submit
+// fijate que esta funcion se lama cuando hay un evento en el input: deberia en cambio
+// llamarse cuando hay un submit en el form
     if (e.keyCode === 13) {
       e.preventDefault();
       history.push(`/search/multi/${searchValue}/page/1`);
