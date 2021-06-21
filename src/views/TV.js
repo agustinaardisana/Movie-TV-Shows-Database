@@ -15,6 +15,7 @@ const TV = () => {
   const { info: infoPopular } = useFetch("popular", mediaType);
   const { info: infoTopRated } = useFetch("top_rated", mediaType);
   const { info: infoOnTheAir } = useFetch("on_the_air", mediaType);
+  // const 
   let location = useLocation();
   const isPreview = showPreview(location.pathname);
 

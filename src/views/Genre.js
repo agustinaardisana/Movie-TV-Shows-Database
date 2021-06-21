@@ -18,6 +18,7 @@ const Title = styled.h2`
 `;
 
 const Genre = () => {
+
   const params = useParams();
   const history = useHistory();
   const mediaType = params.mediaType;

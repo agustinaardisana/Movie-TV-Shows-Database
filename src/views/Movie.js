@@ -16,6 +16,7 @@ const Movie = () => {
   const { info: infoTopRated } = useFetch("top_rated", mediaType);
   const { info: infoUpcoming } = useFetch("upcoming", mediaType);
   const { info: infoNowPlaying } = useFetch("now_playing", mediaType);
+  // const
   let location = useLocation();
   const isPreview = showPreview(location.pathname);
 
